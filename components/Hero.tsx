@@ -94,256 +94,102 @@ const Hero = () => {
             </path>
           </svg>
 
-          {/* Atlantis Ship - Sharp Geometric Design with Vibrant Red & Blue */}
+          {/* Rotating Triangle with Glowing Edges */}
           <motion.div
             className="absolute"
-            style={{ right: '15%', bottom: '18%' }}
+            style={{ right: '20%', bottom: '30%' }}
             animate={{
-              y: [0, -40, 8, -35, 0],
-              x: [0, 15, -8, 20, 0],
-              rotate: [0, -6, 4, -5, 0]
+              rotate: [0, 360]
             }}
             transition={{
-              duration: 6,
+              duration: 8,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: "linear"
             }}
           >
-            <svg width="900" height="900" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+            <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                {/* Vibrant Red Gradient */}
-                <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#ef4444', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#dc2626', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#b91c1c', stopOpacity: 1}} />
-                </linearGradient>
+                {/* Sharp Light Glow Filter */}
+                <filter id="sharpGlow">
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
 
-                {/* Vibrant Blue Gradient */}
-                <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#3b82f6', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#2563eb', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#1d4ed8', stopOpacity: 1}} />
-                </linearGradient>
-
-                {/* Cyan Gradient for accents */}
-                <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#0891b2', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#0e7490', stopOpacity: 1}} />
-                </linearGradient>
-
-                {/* Red to Blue Gradient for main hull */}
-                <linearGradient id="redBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#dc2626', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#8b5cf6', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#2563eb', stopOpacity: 1}} />
-                </linearGradient>
-
-                <filter id="superGlow">
+                {/* Intense Sharp Glow */}
+                <filter id="intenseGlow">
                   <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
                   <feMerge>
                     <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-
-                <filter id="intensiveGlow">
-                  <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
-                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
                   </feMerge>
                 </filter>
+
+                {/* Multi-color gradient for edges */}
+                <linearGradient id="edgeGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#3b82f6', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#8b5cf6', stopOpacity: 1}} />
+                </linearGradient>
+
+                <linearGradient id="edgeGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#ec4899', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#f59e0b', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#10b981', stopOpacity: 1}} />
+                </linearGradient>
               </defs>
 
-              {/* Main Hull - Sharp Geometric Design */}
-              {/* Bottom hull - Red */}
-              <polygon points="50,160 60,155 80,150 160,150 180,155 190,160 185,175 55,175"
-                fill="url(#redGradient)" stroke="#ffffff" strokeWidth="4" filter="url(#superGlow)" opacity="1"/>
+              {/* Main Triangle - Thin lines with intense glow */}
+              <polygon
+                points="100,30 170,150 30,150"
+                fill="none"
+                stroke="url(#edgeGradient1)"
+                strokeWidth="2"
+                filter="url(#intenseGlow)"
+                opacity="1"
+              />
 
-              {/* Upper hull - Blue */}
-              <polygon points="60,155 70,130 80,120 90,115 150,115 160,120 170,130 180,155"
-                fill="url(#blueGradient)" stroke="#ffffff" strokeWidth="4" filter="url(#superGlow)" opacity="1"/>
+              {/* Secondary glow layer */}
+              <polygon
+                points="100,30 170,150 30,150"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="1"
+                filter="url(#sharpGlow)"
+                opacity="0.8"
+              />
 
-              {/* Center accent stripe - Red to Blue blend */}
-              <polygon points="80,150 85,135 155,135 160,150"
-                fill="url(#redBlueGradient)" stroke="#ffffff" strokeWidth="3" opacity="0.95" filter="url(#superGlow)"/>
+              {/* Inner triangle for depth */}
+              <polygon
+                points="100,50 155,135 45,135"
+                fill="none"
+                stroke="url(#edgeGradient2)"
+                strokeWidth="1.5"
+                filter="url(#intenseGlow)"
+                opacity="0.7"
+              />
 
-              {/* Sharp White Lines - Geometric Details */}
-              <line x1="70" y1="130" x2="75" y2="165" stroke="#ffffff" strokeWidth="3" opacity="0.9" filter="url(#superGlow)"/>
-              <line x1="170" y1="130" x2="165" y2="165" stroke="#ffffff" strokeWidth="3" opacity="0.9" filter="url(#superGlow)"/>
-              <line x1="90" y1="115" x2="95" y2="155" stroke="#06b6d4" strokeWidth="2.5" opacity="1" filter="url(#superGlow)"/>
-              <line x1="150" y1="115" x2="145" y2="155" stroke="#06b6d4" strokeWidth="2.5" opacity="1" filter="url(#superGlow)"/>
+              {/* Center point - glowing core */}
+              <circle
+                cx="100"
+                cy="105"
+                r="3"
+                fill="#ffffff"
+                filter="url(#intenseGlow)"
+                opacity="1"
+              />
 
-              {/* Geometric Deck Platform */}
-              <polygon points="75,125 85,120 155,120 165,125 160,132 80,132"
-                fill="url(#cyanGradient)" stroke="#ffffff" strokeWidth="3" opacity="0.95" filter="url(#superGlow)"/>
-
-              {/* MASTS - Tall Sharp White Poles */}
-              {/* Main Center Mast - Tallest */}
-              <rect x="115" y="40" width="10" height="90" fill="#ffffff" filter="url(#intensiveGlow)" opacity="1"/>
-              <rect x="117" y="42" width="6" height="86" fill="url(#blueGradient)" opacity="0.9"/>
-
-              {/* Front Mast - Left */}
-              <rect x="85" y="60" width="8" height="70" fill="#ffffff" filter="url(#superGlow)" opacity="1"/>
-              <rect x="87" y="62" width="4" height="66" fill="url(#redGradient)" opacity="0.9"/>
-
-              {/* Rear Mast - Right */}
-              <rect x="150" y="65" width="8" height="65" fill="#ffffff" filter="url(#superGlow)" opacity="1"/>
-              <rect x="152" y="67" width="4" height="61" fill="url(#blueGradient)" opacity="0.9"/>
-
-              {/* SAILS - Sharp Triangular Geometric Shapes */}
-              {/* Main Sail - Center - Large Blue Triangle */}
-              <polygon points="120,45 175,80 175,120 120,115"
-                fill="url(#blueGradient)" stroke="#ffffff" strokeWidth="4" opacity="0.95" filter="url(#superGlow)">
-                <animate attributeName="points" dur="3.5s" repeatCount="indefinite"
-                  values="120,45 175,80 175,120 120,115;
-                          120,45 185,80 185,120 120,115;
-                          120,45 175,80 175,120 120,115" />
-              </polygon>
-
-              {/* Front Sail - Left - Red Triangle */}
-              <polygon points="89,65 50,90 50,125 89,120"
-                fill="url(#redGradient)" stroke="#ffffff" strokeWidth="4" opacity="0.95" filter="url(#superGlow)">
-                <animate attributeName="points" dur="3.5s" repeatCount="indefinite"
-                  values="89,65 50,90 50,125 89,120;
-                          89,65 40,90 40,125 89,120;
-                          89,65 50,90 50,125 89,120" />
-              </polygon>
-
-              {/* Rear Sail - Right - Cyan Triangle */}
-              <polygon points="154,70 190,95 190,125 154,120"
-                fill="url(#cyanGradient)" stroke="#ffffff" strokeWidth="4" opacity="0.95" filter="url(#superGlow)">
-                <animate attributeName="points" dur="3.5s" repeatCount="indefinite"
-                  values="154,70 190,95 190,125 154,120;
-                          154,70 200,95 200,125 154,120;
-                          154,70 190,95 190,125 154,120" />
-              </polygon>
-
-              {/* Sharp Geometric Windows - Diamond Shapes */}
-              <polygon points="95,140 100,137 105,140 100,143" fill="#06b6d4" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)"/>
-              <polygon points="115,138 120,135 125,138 120,141" fill="#ef4444" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)"/>
-              <polygon points="135,138 140,135 145,138 140,141" fill="#06b6d4" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)"/>
-
-              {/* Bow Ornament - Sharp Star */}
-              <polygon points="120,128 125,135 120,142 115,135" fill="#ffffff" stroke="#06b6d4" strokeWidth="2" opacity="1" filter="url(#intensiveGlow)"/>
-              <circle cx="120" cy="135" r="3" fill="#ef4444" stroke="#ffffff" strokeWidth="1.5" opacity="1" filter="url(#superGlow)"/>
-
-              {/* Sharp Geometric Bottom Trim */}
-              <polygon points="55,175 60,170 180,170 185,175" fill="url(#redBlueGradient)" stroke="#ffffff" strokeWidth="3" opacity="0.9" filter="url(#superGlow)"/>
-
-              {/* Intense Multi-colored Glow Base - Red and Blue */}
-              <ellipse cx="120" cy="175" rx="90" ry="20" fill="#ef4444" opacity="0.4" filter="url(#intensiveGlow)">
-                <animate attributeName="opacity" dur="2s" repeatCount="indefinite"
-                  values="0.4;0.7;0.4" />
-                <animate attributeName="rx" dur="2s" repeatCount="indefinite"
-                  values="90;105;90" />
-              </ellipse>
-
-              <ellipse cx="120" cy="175" rx="75" ry="15" fill="#2563eb" opacity="0.6" filter="url(#intensiveGlow)">
-                <animate attributeName="opacity" dur="2.5s" repeatCount="indefinite"
-                  values="0.6;0.9;0.6" />
-                <animate attributeName="rx" dur="2.5s" repeatCount="indefinite"
-                  values="75;90;75" />
-              </ellipse>
-
-              {/* Vibrant Aura - Pulsing Red & Blue Circle */}
-              <circle cx="120" cy="120" r="100" fill="none" stroke="#ef4444" strokeWidth="3" opacity="0.25" filter="url(#intensiveGlow)">
-                <animate attributeName="r" dur="3s" repeatCount="indefinite"
-                  values="100;115;100" />
-                <animate attributeName="opacity" dur="3s" repeatCount="indefinite"
-                  values="0.25;0.4;0.25" />
-              </circle>
-
-              <circle cx="120" cy="120" r="95" fill="none" stroke="#3b82f6" strokeWidth="3" opacity="0.3" filter="url(#intensiveGlow)">
-                <animate attributeName="r" dur="3s" repeatCount="indefinite"
-                  values="95;110;95" />
-                <animate attributeName="opacity" dur="3s" repeatCount="indefinite"
-                  values="0.3;0.5;0.3" />
-              </circle>
-
-              {/* Sharp Flags - Geometric Triangles */}
-              {/* Main Mast Flag - Red */}
-              <rect x="118" y="35" width="3" height="12" fill="#ffffff" opacity="1"/>
-              <polygon points="121,35 145,42 121,49" fill="#ef4444" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)">
-                <animate attributeName="points" dur="1.8s" repeatCount="indefinite"
-                  values="121,35 145,42 121,49;
-                          121,35 152,42 121,49;
-                          121,35 145,42 121,49" />
-              </polygon>
-
-              {/* Front Mast Flag - Blue */}
-              <rect x="88" y="56" width="3" height="10" fill="#ffffff" opacity="1"/>
-              <polygon points="91,56 110,62 91,68" fill="#3b82f6" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)">
-                <animate attributeName="points" dur="1.8s" repeatCount="indefinite"
-                  values="91,56 110,62 91,68;
-                          91,56 117,62 91,68;
-                          91,56 110,62 91,68" />
-              </polygon>
-
-              {/* Rear Mast Flag - Cyan */}
-              <rect x="153" y="61" width="3" height="10" fill="#ffffff" opacity="1"/>
-              <polygon points="156,61 175,67 156,73" fill="#06b6d4" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)">
-                <animate attributeName="points" dur="1.8s" repeatCount="indefinite"
-                  values="156,61 175,67 156,73;
-                          156,61 182,67 156,73;
-                          156,61 175,67 156,73" />
-              </polygon>
-
-              {/* Additional Sharp Accent Lines for Pop */}
-              <line x1="60" y1="155" x2="180" y2="155" stroke="#ffffff" strokeWidth="2" opacity="0.7" strokeDasharray="5,3"/>
-              <line x1="80" y1="135" x2="160" y2="135" stroke="#06b6d4" strokeWidth="2" opacity="0.8" filter="url(#superGlow)"/>
+              {/* Corner accent points */}
+              <circle cx="100" cy="30" r="2" fill="#06b6d4" filter="url(#sharpGlow)" opacity="1"/>
+              <circle cx="170" cy="150" r="2" fill="#ec4899" filter="url(#sharpGlow)" opacity="1"/>
+              <circle cx="30" cy="150" r="2" fill="#8b5cf6" filter="url(#sharpGlow)" opacity="1"/>
             </svg>
           </motion.div>
-
-          {/* Storm Spray and Foam Effects - Red & Blue Particles */}
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full"
-              style={{
-                right: `${12 + i * 2.5}%`,
-                bottom: `${18 + (i % 6) * 8}%`,
-                width: i % 3 === 0 ? '8px' : '6px',
-                height: i % 3 === 0 ? '8px' : '6px',
-                backgroundColor: i % 2 === 0 ? '#ef4444' : '#ffffff',
-              }}
-              animate={{
-                opacity: [0, 0.9, 0],
-                scale: [0, 2, 0],
-                y: [0, -40, -80],
-              }}
-              transition={{
-                duration: 2 + (i % 3),
-                repeat: Infinity,
-                delay: i * 0.25,
-              }}
-            />
-          ))}
-
-          {/* Mystical Blue & Cyan Sparkles Around Ship */}
-          {[...Array(15)].map((_, i) => (
-            <motion.div
-              key={`sparkle-${i}`}
-              className="absolute rounded-full"
-              style={{
-                right: `${13 + i * 2}%`,
-                bottom: `${20 + (i % 4) * 9}%`,
-                width: i % 2 === 0 ? '6px' : '5px',
-                height: i % 2 === 0 ? '6px' : '5px',
-                backgroundColor: i % 3 === 0 ? '#3b82f6' : '#06b6d4',
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-                scale: [0, 1.8, 0],
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                delay: i * 0.35,
-              }}
-            />
-          ))}
         </div>
       </div>
 
