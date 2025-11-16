@@ -54,6 +54,65 @@ const Features = () => {
       {/* Dark Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#1a1a2e] to-[#0a0a0f]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e33_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e33_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+
+        {/* Glowing Vector Shapes - Silver Lining Effect */}
+        <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow-features">
+              <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <linearGradient id="silverGradient-features" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.6}} />
+              <stop offset="50%" style={{stopColor: '#a5f3fc', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#0891b2', stopOpacity: 0.6}} />
+            </linearGradient>
+          </defs>
+
+          {/* Flowing curved lines */}
+          <path
+            d="M 0 300 Q 400 250, 800 300 T 1600 300"
+            fill="none"
+            stroke="url(#silverGradient-features)"
+            strokeWidth="2"
+            filter="url(#glow-features)"
+            opacity="0.5"
+          />
+
+          <path
+            d="M 1920 500 Q 1400 450, 1000 500 T 200 500"
+            fill="none"
+            stroke="url(#silverGradient-features)"
+            strokeWidth="2"
+            filter="url(#glow-features)"
+            opacity="0.4"
+          />
+
+          <circle
+            cx="20%"
+            cy="30%"
+            r="150"
+            fill="none"
+            stroke="url(#silverGradient-features)"
+            strokeWidth="1.5"
+            filter="url(#glow-features)"
+            opacity="0.3"
+          />
+
+          <circle
+            cx="80%"
+            cy="70%"
+            r="120"
+            fill="none"
+            stroke="url(#silverGradient-features)"
+            strokeWidth="1.5"
+            filter="url(#glow-features)"
+            opacity="0.35"
+          />
+        </svg>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

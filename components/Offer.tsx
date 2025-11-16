@@ -26,6 +26,67 @@ const Offer = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/30 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-900/30 via-transparent to-transparent"></div>
 
+        {/* Glowing Vector Shapes - Silver Lining Effect */}
+        <svg className="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow-offer">
+              <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <linearGradient id="silverGradient-offer" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{stopColor: '#ec4899', stopOpacity: 0.8}} />
+              <stop offset="50%" style={{stopColor: '#fdf2f8', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#d946ef', stopOpacity: 0.8}} />
+            </linearGradient>
+          </defs>
+
+          {/* Dramatic sweeping curves */}
+          <path
+            d="M -100 400 Q 400 200, 800 400 T 1600 400 Q 1900 500, 2020 400"
+            fill="none"
+            stroke="url(#silverGradient-offer)"
+            strokeWidth="3"
+            filter="url(#glow-offer)"
+            opacity="0.6"
+          />
+
+          <path
+            d="M 1920 200 Q 1400 100, 1000 200 T 200 200 Q 0 300, -100 200"
+            fill="none"
+            stroke="url(#silverGradient-offer)"
+            strokeWidth="2.5"
+            filter="url(#glow-offer)"
+            opacity="0.5"
+          />
+
+          <ellipse
+            cx="25%"
+            cy="25%"
+            rx="200"
+            ry="300"
+            fill="none"
+            stroke="url(#silverGradient-offer)"
+            strokeWidth="2"
+            filter="url(#glow-offer)"
+            opacity="0.35"
+          />
+
+          <ellipse
+            cx="75%"
+            cy="75%"
+            rx="250"
+            ry="200"
+            fill="none"
+            stroke="url(#silverGradient-offer)"
+            strokeWidth="2"
+            filter="url(#glow-offer)"
+            opacity="0.4"
+          />
+        </svg>
+
         {/* Glowing Orbs */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>

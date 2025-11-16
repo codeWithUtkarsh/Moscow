@@ -41,6 +41,64 @@ const HowItWorks = () => {
       <div className="absolute inset-0 bg-gradient-dark">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-3xl"></div>
+
+        {/* Glowing Vector Shapes - Silver Lining Effect */}
+        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow-howitworks">
+              <feGaussianBlur stdDeviation="7" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <linearGradient id="silverGradient-howitworks" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style={{stopColor: '#8b5cf6', stopOpacity: 0.7}} />
+              <stop offset="50%" style={{stopColor: '#ddd6fe', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#6366f1', stopOpacity: 0.7}} />
+            </linearGradient>
+          </defs>
+
+          {/* Diagonal flowing lines */}
+          <path
+            d="M 0 100 Q 500 200, 1000 100 T 1920 100"
+            fill="none"
+            stroke="url(#silverGradient-howitworks)"
+            strokeWidth="2"
+            filter="url(#glow-howitworks)"
+            opacity="0.4"
+          />
+
+          <path
+            d="M 0 800 Q 600 700, 1200 800 T 1920 800"
+            fill="none"
+            stroke="url(#silverGradient-howitworks)"
+            strokeWidth="2"
+            filter="url(#glow-howitworks)"
+            opacity="0.5"
+          />
+
+          <path
+            d="M 200 400 Q 600 300, 1000 400 T 1800 400"
+            fill="none"
+            stroke="url(#silverGradient-howitworks)"
+            strokeWidth="1.5"
+            filter="url(#glow-howitworks)"
+            opacity="0.35"
+          />
+
+          <ellipse
+            cx="50%"
+            cy="50%"
+            rx="400"
+            ry="250"
+            fill="none"
+            stroke="url(#silverGradient-howitworks)"
+            strokeWidth="1.5"
+            filter="url(#glow-howitworks)"
+            opacity="0.25"
+          />
+        </svg>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

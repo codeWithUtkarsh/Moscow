@@ -92,6 +92,77 @@ const Signup = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#1a1a2e] to-[#0a0a0f]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e33_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e33_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+
+        {/* Glowing Vector Shapes - Silver Lining Effect */}
+        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow-signup">
+              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <linearGradient id="silverGradient-signup" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style={{stopColor: '#6366f1', stopOpacity: 0.7}} />
+              <stop offset="50%" style={{stopColor: '#e0e7ff', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#06b6d4', stopOpacity: 0.7}} />
+            </linearGradient>
+          </defs>
+
+          {/* Elegant flowing curves */}
+          <path
+            d="M 0 250 Q 500 150, 1000 250 T 1920 250"
+            fill="none"
+            stroke="url(#silverGradient-signup)"
+            strokeWidth="2"
+            filter="url(#glow-signup)"
+            opacity="0.5"
+          />
+
+          <path
+            d="M 1920 650 Q 1200 550, 600 650 T 0 650"
+            fill="none"
+            stroke="url(#silverGradient-signup)"
+            strokeWidth="2"
+            filter="url(#glow-signup)"
+            opacity="0.45"
+          />
+
+          <circle
+            cx="15%"
+            cy="35%"
+            r="180"
+            fill="none"
+            stroke="url(#silverGradient-signup)"
+            strokeWidth="1.5"
+            filter="url(#glow-signup)"
+            opacity="0.3"
+          />
+
+          <circle
+            cx="85%"
+            cy="65%"
+            r="160"
+            fill="none"
+            stroke="url(#silverGradient-signup)"
+            strokeWidth="1.5"
+            filter="url(#glow-signup)"
+            opacity="0.35"
+          />
+
+          <ellipse
+            cx="50%"
+            cy="50%"
+            rx="350"
+            ry="220"
+            fill="none"
+            stroke="url(#silverGradient-signup)"
+            strokeWidth="1.5"
+            filter="url(#glow-signup)"
+            opacity="0.25"
+          />
+        </svg>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

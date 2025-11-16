@@ -16,6 +16,67 @@ const Hero = () => {
         {/* Animated grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e33_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e33_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
+        {/* Glowing Vector Shapes - Silver Lining Effect */}
+        <svg className="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <linearGradient id="silverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{stopColor: '#a78bfa', stopOpacity: 0.8}} />
+              <stop offset="50%" style={{stopColor: '#e0e7ff', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#6366f1', stopOpacity: 0.8}} />
+            </linearGradient>
+          </defs>
+
+          {/* Organic cloud-like shapes with glowing edges */}
+          <path
+            d="M 100 200 Q 200 150, 350 200 T 650 200 Q 750 250, 800 200 L 800 0 L 100 0 Z"
+            fill="none"
+            stroke="url(#silverGradient)"
+            strokeWidth="2"
+            filter="url(#glow)"
+            opacity="0.6"
+          />
+
+          <path
+            d="M 1920 600 Q 1600 550, 1400 600 T 1000 600 Q 800 650, 600 600 L 600 800 L 1920 800 Z"
+            fill="none"
+            stroke="url(#silverGradient)"
+            strokeWidth="2"
+            filter="url(#glow)"
+            opacity="0.5"
+          />
+
+          <ellipse
+            cx="30%"
+            cy="40%"
+            rx="300"
+            ry="200"
+            fill="none"
+            stroke="url(#silverGradient)"
+            strokeWidth="1.5"
+            filter="url(#glow)"
+            opacity="0.3"
+          />
+
+          <ellipse
+            cx="75%"
+            cy="65%"
+            rx="250"
+            ry="180"
+            fill="none"
+            stroke="url(#silverGradient)"
+            strokeWidth="1.5"
+            filter="url(#glow)"
+            opacity="0.4"
+          />
+        </svg>
+
         {/* Glowing orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
