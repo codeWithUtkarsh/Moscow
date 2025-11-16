@@ -105,10 +105,13 @@ const Signup = () => {
           >
             <div>
               <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
-                Ready to Transform Your Idea?
+                Ready to Get Your App?
               </h2>
-              <p className="text-xl text-gray-400 leading-relaxed">
-                Join the next generation of successful founders who turned their vision into reality with Atlantis.AI.
+              <p className="text-2xl font-bold text-white leading-relaxed mb-4">
+                Sign up now. Get your app in 7 days.
+              </p>
+              <p className="text-lg text-gray-400 leading-relaxed">
+                Join people who got their ideas built fast with Atlantis.AI.
               </p>
             </div>
 
@@ -117,20 +120,20 @@ const Signup = () => {
               {[
                 {
                   icon: '🚀',
-                  title: 'Fast Turnaround',
-                  description: 'Get your MVP in days, not months',
+                  title: 'Ready in 7 Days',
+                  description: 'App delivered in one week',
                   image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80',
                 },
                 {
                   icon: '💰',
-                  title: 'Cost Effective',
-                  description: 'Save thousands on development costs',
+                  title: 'Save $25K+',
+                  description: 'Free for first 5 people',
                   image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&q=80',
                 },
                 {
                   icon: '🎯',
-                  title: 'Market Ready',
-                  description: 'Launch and start validating immediately',
+                  title: 'Start Earning Fast',
+                  description: 'Launch and make money quickly',
                   image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80',
                 },
               ].map((benefit, index) => (

@@ -6,38 +6,38 @@ import Image from 'next/image';
 const features = [
   {
     icon: '⚡',
-    title: 'Lightning Speed',
-    description: 'Get your MVP built in days, not months. Our AI-powered workflow accelerates development without compromising quality.',
+    title: '7-Day Delivery',
+    description: 'Your app ready in one week, guaranteed.',
     image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80',
   },
   {
     icon: '🌐',
-    title: 'Any Industry',
-    description: 'Healthcare, FinTech, E-commerce, SaaS – we\'ve got you covered. Our platform adapts to your unique business needs.',
+    title: 'Any Business Type',
+    description: 'E-commerce, mobile apps, websites - we build it all.',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
   },
   {
     icon: '💎',
-    title: 'Premium Quality',
-    description: 'Professional-grade code, modern tech stack, and best practices. Your MVP will be production-ready from day one.',
+    title: 'Professional Quality',
+    description: 'Top-grade code that actually works and scales.',
     image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&q=80',
   },
   {
     icon: '🎯',
-    title: 'Laser Focused',
-    description: 'We build exactly what you need – no bloat, no unnecessary features. Just a lean, mean MVP machine.',
+    title: 'No Wasted Features',
+    description: 'Only what you need. Nothing extra. Pure value.',
     image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80',
   },
   {
     icon: '🔄',
-    title: 'Iterative Process',
-    description: 'Continuous feedback and rapid iterations ensure your vision comes to life exactly as you imagined.',
+    title: 'You Stay In Control',
+    description: 'See progress daily. Give feedback anytime.',
     image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80',
   },
   {
     icon: '🤝',
-    title: 'Full Support',
-    description: 'From initial concept to launch and beyond, our team is with you every step of the journey.',
+    title: 'Complete Support',
+    description: 'Help from idea to launch and beyond. Always there.',
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80',
   },
 ];
@@ -60,14 +60,14 @@ const Features = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
-            Why{' '}
+            Why Choose{' '}
             <span className="bg-gradient-accent bg-clip-text text-transparent">
-              Atlantis.AI
+              Us
             </span>
             ?
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Lightning-fast MVP development powered by cutting-edge AI
+          <p className="text-2xl font-bold text-white max-w-2xl mx-auto">
+            We make app building simple, fast, and affordable
           </p>
         </motion.div>
 

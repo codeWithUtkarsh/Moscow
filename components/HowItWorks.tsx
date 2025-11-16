@@ -6,22 +6,22 @@ import Image from 'next/image';
 const steps = [
   {
     number: '01',
-    title: 'Share Your Vision',
-    description: 'Fill out our simple form and tell us about your groundbreaking idea. The more details, the better we can serve you.',
+    title: 'Tell Us Your Idea',
+    description: 'Describe your app in simple words. No tech knowledge needed.',
     icon: '📝',
     image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80',
   },
   {
     number: '02',
-    title: 'We Build It',
-    description: 'Our AI-powered development team gets to work, keeping you updated at every milestone. Watch your idea come to life!',
+    title: 'We Build Your App',
+    description: 'We code, design, and test everything. You just watch and give feedback.',
     icon: '🛠️',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80',
   },
   {
     number: '03',
-    title: 'Launch & Grow',
-    description: 'Receive your fully functional MVP, ready to wow investors and users. Start validating your market fit immediately!',
+    title: 'Launch & Make Money',
+    description: 'Get your ready app. Start getting customers. Begin earning.',
     icon: '🚀',
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80',
   },
@@ -51,8 +51,8 @@ const HowItWorks = () => {
               Works
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            From idea to MVP in 3 simple steps
+          <p className="text-2xl font-bold text-white max-w-2xl mx-auto">
+            3 easy steps. No confusion. No hassle.
           </p>
         </motion.div>
 

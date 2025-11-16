@@ -48,22 +48,29 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-5xl md:text-7xl font-bold font-display leading-tight"
             >
-              Turn Your{' '}
               <span className="bg-gradient-accent bg-clip-text text-transparent text-glow">
-                Dream
+                We Build Your App
               </span>
               <br />
-              Into Reality
+              In 7 Days
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl text-gray-400 leading-relaxed max-w-xl"
+              className="text-2xl md:text-3xl font-bold text-white leading-relaxed max-w-xl"
             >
-              Transform your groundbreaking idea into a working MVP at lightning speed.
-              Any industry. Any vision. We make it happen.
+              Just tell us your idea. We handle everything else.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+              className="text-lg text-gray-400 max-w-xl"
+            >
+              No coding required. No technical skills needed. Get a real, working app fast.
             </motion.p>
 
             <motion.div
@@ -131,8 +138,8 @@ const Hero = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="text-white font-semibold text-lg">AI-Powered Development</div>
-                  <div className="text-gray-300 text-sm">Lightning fast results</div>
+                  <div className="text-white font-bold text-xl">Fast & Professional</div>
+                  <div className="text-gray-300 text-sm">Ready in 7 days</div>
                 </div>
               </motion.div>
 
@@ -150,8 +157,8 @@ const Hero = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <div className="text-white font-semibold">Data-Driven</div>
-                  <div className="text-gray-300 text-sm">Smart insights</div>
+                  <div className="text-white font-bold">Your Vision</div>
+                  <div className="text-gray-300 text-sm">Our expertise</div>
                 </div>
               </motion.div>
 
@@ -169,8 +176,8 @@ const Hero = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <div className="text-white font-semibold">Modern Tech</div>
-                  <div className="text-gray-300 text-sm">Production ready</div>
+                  <div className="text-white font-bold">Launch Ready</div>
+                  <div className="text-gray-300 text-sm">Start making money</div>
                 </div>
               </motion.div>
 

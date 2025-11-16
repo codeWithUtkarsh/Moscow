@@ -70,9 +70,9 @@ const Offer = () => {
                 transition={{ delay: 0.3 }}
                 className="text-4xl md:text-6xl font-bold font-display mb-8 leading-tight"
               >
-                First 5 Founders Get Their MVP{' '}
+                First 5 People Get{' '}
                 <span className="bg-gradient-accent bg-clip-text text-transparent text-glow">
-                  100% FREE!
+                  100% FREE APP
                 </span>
               </motion.h2>
 
@@ -82,10 +82,18 @@ const Offer = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-gray-300 mb-12 max-w-3xl leading-relaxed"
+                className="text-2xl font-bold text-white mb-12 max-w-3xl leading-relaxed"
               >
-                We're celebrating our launch by offering the first 5 founders a completely free MVP development.
-                That's thousands of dollars in value, absolutely free. But you need to act fast – spots are filling up!
+                Worth $25,000. Completely FREE. No tricks. No hidden fees.
+              </motion.p>
+              <motion.p
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.45 }}
+                className="text-lg text-gray-300 mb-12 max-w-3xl"
+              >
+                Sign up now before all 5 spots are gone!
               </motion.p>
 
               {/* Features Grid */}
