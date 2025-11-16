@@ -51,12 +51,12 @@ const features: Array<{
 const Features = () => {
   return (
     <section id="features" className="relative py-32 overflow-hidden">
-      {/* Gaia-inspired Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f1a] via-[#1a2f3a] to-[#0a1f1a]">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#14b8a633_1px,transparent_1px),linear-gradient(to_bottom,#14b8a633_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+      {/* Light Earth Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#e8e4db] via-[#f5f3ef] to-[#e8e4db]">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#a8886015_1px,transparent_1px),linear-gradient(to_bottom,#a8886015_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30"></div>
 
-        {/* Glowing Vector Shapes - Gaia Teal/Purple Effect */}
-        <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+        {/* Flowing Vector Shapes - Natural Earth Tones */}
+        <svg className="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="glow-features">
               <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
@@ -66,9 +66,9 @@ const Features = () => {
               </feMerge>
             </filter>
             <linearGradient id="silverGradient-features" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: '#14b8a6', stopOpacity: 0.6}} />
-              <stop offset="50%" style={{stopColor: '#22d3ee', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#c084fc', stopOpacity: 0.6}} />
+              <stop offset="0%" style={{stopColor: '#7c9885', stopOpacity: 0.5}} />
+              <stop offset="50%" style={{stopColor: '#a88860', stopOpacity: 0.8}} />
+              <stop offset="100%" style={{stopColor: '#8b6f47', stopOpacity: 0.5}} />
             </linearGradient>
           </defs>
 
@@ -124,14 +124,14 @@ const Features = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 text-stone-800">
             Why Choose{' '}
             <span className="bg-gradient-accent bg-clip-text text-transparent">
               Us
             </span>
             ?
           </h2>
-          <p className="text-2xl font-bold text-white max-w-2xl mx-auto">
+          <p className="text-2xl font-bold text-stone-700 max-w-2xl mx-auto">
             We make app building simple, fast, and affordable
           </p>
         </motion.div>
@@ -147,7 +147,7 @@ const Features = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="relative h-full glass-effect rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 overflow-hidden">
+              <div className="relative h-full bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-stone-200 hover:bg-white/80 hover:shadow-lg transition-all duration-300 overflow-hidden">
                 {/* Background Image */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
                   <Image
@@ -161,13 +161,13 @@ const Features = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="relative inline-block mb-6">
-                    <feature.icon className="w-14 h-14 text-teal-400 group-hover:text-white transition-colors duration-300 group-hover:scale-110" strokeWidth={2} />
-                    <div className="absolute inset-0 bg-teal-400/20 blur-xl group-hover:bg-purple-400/30 transition-all"></div>
+                    <feature.icon className="w-14 h-14 text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300 group-hover:scale-110" strokeWidth={2} />
+                    <div className="absolute inset-0 bg-emerald-400/20 blur-xl group-hover:bg-amber-400/30 transition-all"></div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 font-display group-hover:text-transparent group-hover:bg-gradient-accent group-hover:bg-clip-text transition-all duration-300">
+                  <h3 className="text-2xl font-bold mb-4 font-display text-stone-800 group-hover:text-transparent group-hover:bg-gradient-accent group-hover:bg-clip-text transition-all duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-stone-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -191,7 +191,7 @@ const Features = () => {
         >
           <a
             href="#signup"
-            className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-accent text-white rounded-full font-semibold text-lg hover:glow-effect transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-accent text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             <span>Start Building Your MVP</span>
             <span>→</span>

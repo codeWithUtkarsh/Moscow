@@ -8,41 +8,41 @@ import { Rocket, ArrowRight } from 'lucide-react';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background with Gaia-inspired gradients */}
+      {/* Light Earth Background */}
       <div className="absolute inset-0 bg-gradient-dark">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-600/30 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-700/25 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-600/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-200/40 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-amber-200/30 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-stone-200/20 via-transparent to-transparent"></div>
 
-        {/* Animated grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e33_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e33_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8b6f4710_1px,transparent_1px),linear-gradient(to_bottom,#8b6f4710_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
-        {/* Glowing orbs - Gaia colors */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-500/25 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/25 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
-        <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+        {/* Soft glowing orbs - Natural colors */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-300/20 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-300/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-stone-300/15 rounded-full blur-3xl animate-pulse-slow"></div>
 
         {/* Dramatic Storm Waves with Atlantis Ship */}
         <div className="absolute bottom-0 left-0 right-0 h-[600px] opacity-40 overflow-hidden">
           <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 600">
             <defs>
-              {/* Gaia Wave 1 - Teal/Forest gradient */}
+              {/* Natural Wave 1 - Forest green gradient */}
               <linearGradient id="stormWave1" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#0f4c3a', stopOpacity: 0.8}} />
-                <stop offset="50%" style={{stopColor: '#14b8a6', stopOpacity: 0.9}} />
-                <stop offset="100%" style={{stopColor: '#0d9488', stopOpacity: 1}} />
+                <stop offset="0%" style={{stopColor: '#7c9885', stopOpacity: 0.8}} />
+                <stop offset="50%" style={{stopColor: '#5a8f7b', stopOpacity: 0.9}} />
+                <stop offset="100%" style={{stopColor: '#4a7c6a', stopOpacity: 1}} />
               </linearGradient>
-              {/* Gaia Wave 2 - Cosmic Teal gradient */}
+              {/* Natural Wave 2 - Earth green gradient */}
               <linearGradient id="stormWave2" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#0e7490', stopOpacity: 0.7}} />
-                <stop offset="50%" style={{stopColor: '#06b6d4', stopOpacity: 0.85}} />
-                <stop offset="100%" style={{stopColor: '#155e75', stopOpacity: 0.95}} />
+                <stop offset="0%" style={{stopColor: '#6b9080', stopOpacity: 0.7}} />
+                <stop offset="50%" style={{stopColor: '#5a8f7b', stopOpacity: 0.85}} />
+                <stop offset="100%" style={{stopColor: '#4a7c6a', stopOpacity: 0.95}} />
               </linearGradient>
-              {/* Gaia Wave 3 - Purple/Teal blend */}
+              {/* Natural Wave 3 - Warm earth blend */}
               <linearGradient id="stormWave3" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#4c1d95', stopOpacity: 0.6}} />
-                <stop offset="50%" style={{stopColor: '#14b8a6', stopOpacity: 0.75}} />
-                <stop offset="100%" style={{stopColor: '#0f4c3a', stopOpacity: 0.9}} />
+                <stop offset="0%" style={{stopColor: '#a88860', stopOpacity: 0.6}} />
+                <stop offset="50%" style={{stopColor: '#7c9885', stopOpacity: 0.75}} />
+                <stop offset="100%" style={{stopColor: '#5a8f7b', stopOpacity: 0.9}} />
               </linearGradient>
               <filter id="turbulence">
                 <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="turbulence"/>
@@ -135,18 +135,18 @@ const Hero = () => {
                   </feMerge>
                 </filter>
 
-                {/* Gaia gradient 1 - Electric Cyan to Cosmic Purple */}
+                {/* Natural gradient 1 - Forest to Warm Earth */}
                 <linearGradient id="edgeGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#22d3ee', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#c084fc', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#a78bfa', stopOpacity: 1}} />
+                  <stop offset="0%" style={{stopColor: '#7c9885', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#a88860', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#8b6f47', stopOpacity: 1}} />
                 </linearGradient>
 
-                {/* Gaia gradient 2 - Cosmic Pink to Emerald */}
+                {/* Natural gradient 2 - Warm Earth to Forest */}
                 <linearGradient id="edgeGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#f0abfc', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#c084fc', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#14b8a6', stopOpacity: 1}} />
+                  <stop offset="0%" style={{stopColor: '#d4896b', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#a88860', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#7c9885', stopOpacity: 1}} />
                 </linearGradient>
               </defs>
 
@@ -190,10 +190,10 @@ const Hero = () => {
                 opacity="1"
               />
 
-              {/* Corner accent points - Gaia colors */}
-              <circle cx="100" cy="30" r="2" fill="#22d3ee" filter="url(#sharpGlow)" opacity="1"/>
-              <circle cx="170" cy="150" r="2" fill="#f0abfc" filter="url(#sharpGlow)" opacity="1"/>
-              <circle cx="30" cy="150" r="2" fill="#14b8a6" filter="url(#sharpGlow)" opacity="1"/>
+              {/* Corner accent points - Natural earth colors */}
+              <circle cx="100" cy="30" r="2" fill="#7c9885" filter="url(#sharpGlow)" opacity="1"/>
+              <circle cx="170" cy="150" r="2" fill="#d4896b" filter="url(#sharpGlow)" opacity="1"/>
+              <circle cx="30" cy="150" r="2" fill="#a88860" filter="url(#sharpGlow)" opacity="1"/>
             </svg>
           </motion.div>
         </div>
@@ -218,16 +218,16 @@ const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-600"></span>
               </span>
-              <span className="text-sm font-medium text-gray-300">Only 5 FREE spots remaining!</span>
+              <span className="text-sm font-medium text-stone-700">Only 5 FREE spots remaining!</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl font-bold font-display leading-tight"
+              className="text-5xl md:text-7xl font-bold font-display leading-tight text-stone-800"
             >
-              <span className="bg-gradient-accent bg-clip-text text-transparent text-glow">
+              <span className="bg-gradient-accent bg-clip-text text-transparent">
                 We Build Your App
               </span>
               <br />
@@ -238,7 +238,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-2xl md:text-3xl font-bold text-white leading-relaxed max-w-xl"
+              className="text-2xl md:text-3xl font-bold text-stone-700 leading-relaxed max-w-xl"
             >
               Just tell us your idea. We handle everything else.
             </motion.p>
@@ -247,7 +247,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 }}
-              className="text-lg text-gray-400 max-w-xl"
+              className="text-lg text-stone-600 max-w-xl"
             >
               No coding required. No technical skills needed. Get a real, working app fast.
             </motion.p>
@@ -260,14 +260,14 @@ const Hero = () => {
             >
               <Link
                 href="#signup"
-                className="group px-8 py-4 bg-gradient-accent text-white rounded-full font-semibold text-lg hover:glow-effect transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+                className="group px-8 py-4 bg-gradient-accent text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
               >
                 <span>Get Started Free</span>
                 <Rocket className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="#how-it-works"
-                className="px-8 py-4 glass-effect text-white rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+                className="px-8 py-4 bg-white/60 backdrop-blur-sm text-stone-800 rounded-full font-semibold text-lg border-2 border-stone-300 hover:bg-white/80 transition-all duration-300 flex items-center justify-center"
               >
                 Learn More
               </Link>
@@ -282,15 +282,15 @@ const Hero = () => {
             >
               <div>
                 <div className="text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent">50+</div>
-                <div className="text-sm text-gray-400 mt-1">MVPs Built</div>
+                <div className="text-sm text-stone-600 mt-1">MVPs Built</div>
               </div>
               <div>
                 <div className="text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent">10x</div>
-                <div className="text-sm text-gray-400 mt-1">Faster Launch</div>
+                <div className="text-sm text-stone-600 mt-1">Faster Launch</div>
               </div>
               <div>
                 <div className="text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent">100%</div>
-                <div className="text-sm text-gray-400 mt-1">Satisfaction</div>
+                <div className="text-sm text-stone-600 mt-1">Satisfaction</div>
               </div>
             </motion.div>
           </motion.div>
