@@ -80,6 +80,145 @@ const Hero = () => {
         {/* Glowing orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+
+        {/* Animated Ocean Waves with Atlantis Ship */}
+        <div className="absolute bottom-0 left-0 right-0 h-[400px] opacity-30 overflow-hidden">
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 400">
+            <defs>
+              <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.3}} />
+                <stop offset="100%" style={{stopColor: '#0891b2', stopOpacity: 0.6}} />
+              </linearGradient>
+              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.2}} />
+                <stop offset="100%" style={{stopColor: '#0284c7', stopOpacity: 0.5}} />
+              </linearGradient>
+              <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style={{stopColor: '#0ea5e9', stopOpacity: 0.15}} />
+                <stop offset="100%" style={{stopColor: '#0369a1', stopOpacity: 0.4}} />
+              </linearGradient>
+            </defs>
+
+            {/* Wave Layer 3 - Back */}
+            <path fill="url(#waveGradient3)" d="M0,200 Q360,150 720,200 T1440,200 L1440,400 L0,400 Z">
+              <animate attributeName="d" dur="20s" repeatCount="indefinite"
+                values="M0,200 Q360,150 720,200 T1440,200 L1440,400 L0,400 Z;
+                        M0,200 Q360,250 720,200 T1440,200 L1440,400 L0,400 Z;
+                        M0,200 Q360,150 720,200 T1440,200 L1440,400 L0,400 Z" />
+            </path>
+
+            {/* Wave Layer 2 - Middle */}
+            <path fill="url(#waveGradient2)" d="M0,240 Q360,200 720,240 T1440,240 L1440,400 L0,400 Z">
+              <animate attributeName="d" dur="15s" repeatCount="indefinite"
+                values="M0,240 Q360,200 720,240 T1440,240 L1440,400 L0,400 Z;
+                        M0,240 Q360,280 720,240 T1440,240 L1440,400 L0,400 Z;
+                        M0,240 Q360,200 720,240 T1440,240 L1440,400 L0,400 Z" />
+            </path>
+
+            {/* Wave Layer 1 - Front */}
+            <path fill="url(#waveGradient1)" d="M0,280 Q360,240 720,280 T1440,280 L1440,400 L0,400 Z">
+              <animate attributeName="d" dur="12s" repeatCount="indefinite"
+                values="M0,280 Q360,240 720,280 T1440,280 L1440,400 L0,400 Z;
+                        M0,280 Q360,320 720,280 T1440,280 L1440,400 L0,400 Z;
+                        M0,280 Q360,240 720,280 T1440,280 L1440,400 L0,400 Z" />
+            </path>
+          </svg>
+
+          {/* Atlantis Ship - Sailing on Waves */}
+          <motion.div
+            className="absolute"
+            style={{ left: '15%', bottom: '45%' }}
+            animate={{
+              y: [0, -15, 0, -10, 0],
+              x: [0, 10, 0, -5, 0],
+              rotate: [0, -2, 0, 2, 0]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <svg width="180" height="180" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="shipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#a78bfa', stopOpacity: 0.9}} />
+                  <stop offset="100%" style={{stopColor: '#6366f1', stopOpacity: 0.9}} />
+                </linearGradient>
+                <filter id="shipGlow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              {/* Ship Hull */}
+              <path d="M 50 140 Q 40 120, 50 100 L 70 100 L 130 100 L 150 100 Q 160 120, 150 140 L 140 145 L 60 145 Z"
+                fill="url(#shipGradient)" stroke="#e0e7ff" strokeWidth="2" filter="url(#shipGlow)" opacity="0.9"/>
+
+              {/* Main Mast */}
+              <rect x="95" y="50" width="4" height="60" fill="#e0e7ff" filter="url(#shipGlow)" opacity="0.8"/>
+
+              {/* Sail 1 - Main Sail */}
+              <path d="M 99 55 Q 130 70, 135 85 L 99 95 Z" fill="#a78bfa" stroke="#e0e7ff" strokeWidth="1.5" opacity="0.7">
+                <animate attributeName="d" dur="4s" repeatCount="indefinite"
+                  values="M 99 55 Q 130 70, 135 85 L 99 95 Z;
+                          M 99 55 Q 135 70, 140 85 L 99 95 Z;
+                          M 99 55 Q 130 70, 135 85 L 99 95 Z" />
+              </path>
+
+              {/* Sail 2 - Front Sail */}
+              <path d="M 97 65 Q 70 75, 65 90 L 97 100 Z" fill="#6366f1" stroke="#e0e7ff" strokeWidth="1.5" opacity="0.7">
+                <animate attributeName="d" dur="4s" repeatCount="indefinite"
+                  values="M 97 65 Q 70 75, 65 90 L 97 100 Z;
+                          M 97 65 Q 65 75, 60 90 L 97 100 Z;
+                          M 97 65 Q 70 75, 65 90 L 97 100 Z" />
+              </path>
+
+              {/* Decorative Details */}
+              <circle cx="100" cy="110" r="3" fill="#fbbf24" opacity="0.8" filter="url(#shipGlow)"/>
+              <path d="M 60 145 Q 100 150, 140 145" stroke="#fbbf24" strokeWidth="2" fill="none" opacity="0.6"/>
+
+              {/* Mystical Glow at Ship Base */}
+              <ellipse cx="100" cy="145" rx="50" ry="8" fill="#06b6d4" opacity="0.3" filter="url(#shipGlow)">
+                <animate attributeName="opacity" dur="3s" repeatCount="indefinite"
+                  values="0.3;0.5;0.3" />
+              </ellipse>
+
+              {/* Flag */}
+              <rect x="99" y="48" width="1" height="8" fill="#e0e7ff" opacity="0.8"/>
+              <path d="M 100 48 L 115 52 L 100 56 Z" fill="#ec4899" opacity="0.8">
+                <animate attributeName="d" dur="2s" repeatCount="indefinite"
+                  values="M 100 48 L 115 52 L 100 56 Z;
+                          M 100 48 L 118 52 L 100 56 Z;
+                          M 100 48 L 115 52 L 100 56 Z" />
+              </path>
+            </svg>
+          </motion.div>
+
+          {/* Sparkles on Water */}
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-cyan-400 rounded-full"
+              style={{
+                left: `${15 + i * 10}%`,
+                bottom: `${40 + (i % 3) * 5}%`,
+              }}
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                delay: i * 0.4,
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
