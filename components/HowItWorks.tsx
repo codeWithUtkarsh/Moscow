@@ -37,12 +37,13 @@ const steps: Array<{
 const HowItWorks = () => {
   return (
     <section id="how-it-works" className="relative py-32 overflow-hidden">
-      {/* Background */}
+      {/* Gaia Background */}
       <div className="absolute inset-0 bg-gradient-dark">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-600/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-pink-500/10 rounded-full blur-3xl"></div>
 
-        {/* Glowing Vector Shapes - Silver Lining Effect */}
+        {/* Glowing Vector Shapes - Gaia Cosmic Effect */}
         <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="glow-howitworks">
@@ -53,9 +54,9 @@ const HowItWorks = () => {
               </feMerge>
             </filter>
             <linearGradient id="silverGradient-howitworks" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style={{stopColor: '#8b5cf6', stopOpacity: 0.7}} />
-              <stop offset="50%" style={{stopColor: '#ddd6fe', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#6366f1', stopOpacity: 0.7}} />
+              <stop offset="0%" style={{stopColor: '#c084fc', stopOpacity: 0.7}} />
+              <stop offset="50%" style={{stopColor: '#14b8a6', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#f0abfc', stopOpacity: 0.7}} />
             </linearGradient>
           </defs>
 

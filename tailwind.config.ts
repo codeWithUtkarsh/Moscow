@@ -19,11 +19,18 @@ const config: Config = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-dark': 'linear-gradient(135deg, #0F0F1E 0%, #1a1a2e 50%, #16213e 100%)',
-        'gradient-purple-dark': 'linear-gradient(135deg, #1a0033 0%, #2d1b69 100%)',
-        'gradient-blue-dark': 'linear-gradient(135deg, #0a192f 0%, #172a46 100%)',
-        'gradient-accent': 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%)',
-        'gradient-cyan-dark': 'linear-gradient(135deg, #0891b2 0%, #06b6d4 100%)',
+        // Gaia-inspired: Deep forest/earth to cosmic purple
+        'gradient-dark': 'linear-gradient(135deg, #0a1f1a 0%, #1a2f3a 50%, #1e1b4b 100%)',
+        // Mystical purple cosmic gradient
+        'gradient-purple-dark': 'linear-gradient(135deg, #1e0a2e 0%, #4c1d95 50%, #6b21a8 100%)',
+        // Forest green to teal gradient
+        'gradient-green-teal': 'linear-gradient(135deg, #0f4c3a 0%, #14b8a6 100%)',
+        // Cosmic accent: Pink to Purple to Cyan
+        'gradient-accent': 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%)',
+        // Electric neon gradient
+        'gradient-neon': 'linear-gradient(135deg, #22d3ee 0%, #c084fc 50%, #f0abfc 100%)',
+        // Earth/nature gradient
+        'gradient-earth': 'linear-gradient(135deg, #78716c 0%, #2d8b5f 50%, #0d9488 100%)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

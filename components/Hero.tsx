@@ -8,36 +8,41 @@ import { Rocket, ArrowRight } from 'lucide-react';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background with dark gradients */}
+      {/* Background with Gaia-inspired gradients */}
       <div className="absolute inset-0 bg-gradient-dark">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/20 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-600/30 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-700/25 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-600/10 via-transparent to-transparent"></div>
 
         {/* Animated grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e33_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e33_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
-        {/* Glowing orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        {/* Glowing orbs - Gaia colors */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-500/25 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/25 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
 
         {/* Dramatic Storm Waves with Atlantis Ship */}
         <div className="absolute bottom-0 left-0 right-0 h-[600px] opacity-40 overflow-hidden">
           <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 600">
             <defs>
+              {/* Gaia Wave 1 - Teal/Forest gradient */}
               <linearGradient id="stormWave1" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#0c4a6e', stopOpacity: 0.8}} />
-                <stop offset="50%" style={{stopColor: '#06b6d4', stopOpacity: 0.9}} />
-                <stop offset="100%" style={{stopColor: '#164e63', stopOpacity: 1}} />
+                <stop offset="0%" style={{stopColor: '#0f4c3a', stopOpacity: 0.8}} />
+                <stop offset="50%" style={{stopColor: '#14b8a6', stopOpacity: 0.9}} />
+                <stop offset="100%" style={{stopColor: '#0d9488', stopOpacity: 1}} />
               </linearGradient>
+              {/* Gaia Wave 2 - Cosmic Teal gradient */}
               <linearGradient id="stormWave2" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style={{stopColor: '#0e7490', stopOpacity: 0.7}} />
-                <stop offset="50%" style={{stopColor: '#0891b2', stopOpacity: 0.85}} />
+                <stop offset="50%" style={{stopColor: '#06b6d4', stopOpacity: 0.85}} />
                 <stop offset="100%" style={{stopColor: '#155e75', stopOpacity: 0.95}} />
               </linearGradient>
+              {/* Gaia Wave 3 - Purple/Teal blend */}
               <linearGradient id="stormWave3" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#075985', stopOpacity: 0.6}} />
-                <stop offset="50%" style={{stopColor: '#0ea5e9', stopOpacity: 0.75}} />
-                <stop offset="100%" style={{stopColor: '#0c4a6e', stopOpacity: 0.9}} />
+                <stop offset="0%" style={{stopColor: '#4c1d95', stopOpacity: 0.6}} />
+                <stop offset="50%" style={{stopColor: '#14b8a6', stopOpacity: 0.75}} />
+                <stop offset="100%" style={{stopColor: '#0f4c3a', stopOpacity: 0.9}} />
               </linearGradient>
               <filter id="turbulence">
                 <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="turbulence"/>
@@ -130,17 +135,18 @@ const Hero = () => {
                   </feMerge>
                 </filter>
 
-                {/* Multi-color gradient for edges */}
+                {/* Gaia gradient 1 - Electric Cyan to Cosmic Purple */}
                 <linearGradient id="edgeGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#3b82f6', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#8b5cf6', stopOpacity: 1}} />
+                  <stop offset="0%" style={{stopColor: '#22d3ee', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#c084fc', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#a78bfa', stopOpacity: 1}} />
                 </linearGradient>
 
+                {/* Gaia gradient 2 - Cosmic Pink to Emerald */}
                 <linearGradient id="edgeGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#ec4899', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#f59e0b', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#10b981', stopOpacity: 1}} />
+                  <stop offset="0%" style={{stopColor: '#f0abfc', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#c084fc', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#14b8a6', stopOpacity: 1}} />
                 </linearGradient>
               </defs>
 
@@ -184,10 +190,10 @@ const Hero = () => {
                 opacity="1"
               />
 
-              {/* Corner accent points */}
-              <circle cx="100" cy="30" r="2" fill="#06b6d4" filter="url(#sharpGlow)" opacity="1"/>
-              <circle cx="170" cy="150" r="2" fill="#ec4899" filter="url(#sharpGlow)" opacity="1"/>
-              <circle cx="30" cy="150" r="2" fill="#8b5cf6" filter="url(#sharpGlow)" opacity="1"/>
+              {/* Corner accent points - Gaia colors */}
+              <circle cx="100" cy="30" r="2" fill="#22d3ee" filter="url(#sharpGlow)" opacity="1"/>
+              <circle cx="170" cy="150" r="2" fill="#f0abfc" filter="url(#sharpGlow)" opacity="1"/>
+              <circle cx="30" cy="150" r="2" fill="#14b8a6" filter="url(#sharpGlow)" opacity="1"/>
             </svg>
           </motion.div>
         </div>

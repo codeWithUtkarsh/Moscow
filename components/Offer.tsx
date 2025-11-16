@@ -8,9 +8,9 @@ import { Check, Gift, Clock } from 'lucide-react';
 const Offer = () => {
   return (
     <section id="offer" className="relative py-32 overflow-hidden">
-      {/* Dramatic Dark Background */}
+      {/* Gaia-inspired Dramatic Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0033] via-[#0a0a0f] to-[#0a192f]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1e0a2e] via-[#0a1f1a] to-[#1e1b4b]"></div>
 
         {/* Animated Background Image */}
         <div className="absolute inset-0 opacity-10">
@@ -22,11 +22,11 @@ const Offer = () => {
           />
         </div>
 
-        {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/30 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-900/30 via-transparent to-transparent"></div>
+        {/* Gaia Gradient Overlays */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-700/30 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-teal-600/30 via-transparent to-transparent"></div>
 
-        {/* Glowing Vector Shapes - Silver Lining Effect */}
+        {/* Glowing Vector Shapes - Gaia Pink/Teal Effect */}
         <svg className="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="glow-offer">
@@ -37,9 +37,9 @@ const Offer = () => {
               </feMerge>
             </filter>
             <linearGradient id="silverGradient-offer" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{stopColor: '#ec4899', stopOpacity: 0.8}} />
-              <stop offset="50%" style={{stopColor: '#fdf2f8', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#d946ef', stopOpacity: 0.8}} />
+              <stop offset="0%" style={{stopColor: '#f0abfc', stopOpacity: 0.8}} />
+              <stop offset="50%" style={{stopColor: '#14b8a6', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#22d3ee', stopOpacity: 0.8}} />
             </linearGradient>
           </defs>
 

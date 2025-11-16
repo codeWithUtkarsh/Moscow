@@ -51,11 +51,11 @@ const features: Array<{
 const Features = () => {
   return (
     <section id="features" className="relative py-32 overflow-hidden">
-      {/* Dark Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#1a1a2e] to-[#0a0a0f]">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e33_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e33_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+      {/* Gaia-inspired Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f1a] via-[#1a2f3a] to-[#0a1f1a]">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#14b8a633_1px,transparent_1px),linear-gradient(to_bottom,#14b8a633_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
 
-        {/* Glowing Vector Shapes - Silver Lining Effect */}
+        {/* Glowing Vector Shapes - Gaia Teal/Purple Effect */}
         <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="glow-features">
@@ -66,9 +66,9 @@ const Features = () => {
               </feMerge>
             </filter>
             <linearGradient id="silverGradient-features" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.6}} />
-              <stop offset="50%" style={{stopColor: '#a5f3fc', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#0891b2', stopOpacity: 0.6}} />
+              <stop offset="0%" style={{stopColor: '#14b8a6', stopOpacity: 0.6}} />
+              <stop offset="50%" style={{stopColor: '#22d3ee', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#c084fc', stopOpacity: 0.6}} />
             </linearGradient>
           </defs>
 
@@ -161,8 +161,8 @@ const Features = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="relative inline-block mb-6">
-                    <feature.icon className="w-14 h-14 text-cyan-400 group-hover:text-white transition-colors duration-300 group-hover:scale-110" strokeWidth={2} />
-                    <div className="absolute inset-0 bg-cyan-400/20 blur-xl group-hover:bg-cyan-400/30 transition-all"></div>
+                    <feature.icon className="w-14 h-14 text-teal-400 group-hover:text-white transition-colors duration-300 group-hover:scale-110" strokeWidth={2} />
+                    <div className="absolute inset-0 bg-teal-400/20 blur-xl group-hover:bg-purple-400/30 transition-all"></div>
                   </div>
                   <h3 className="text-2xl font-bold mb-4 font-display group-hover:text-transparent group-hover:bg-gradient-accent group-hover:bg-clip-text transition-all duration-300">
                     {feature.title}

@@ -89,9 +89,9 @@ const Signup = () => {
 
   return (
     <section id="signup" className="relative py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#1a1a2e] to-[#0a0a0f]">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e33_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e33_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+      {/* Gaia Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f1a] via-[#1e1b4b] to-[#0a1f1a]">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#14b8a633_1px,transparent_1px),linear-gradient(to_bottom,#14b8a633_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
 
         {/* Glowing Vector Shapes - Silver Lining Effect */}
         <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
@@ -104,9 +104,9 @@ const Signup = () => {
               </feMerge>
             </filter>
             <linearGradient id="silverGradient-signup" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style={{stopColor: '#6366f1', stopOpacity: 0.7}} />
-              <stop offset="50%" style={{stopColor: '#e0e7ff', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#06b6d4', stopOpacity: 0.7}} />
+              <stop offset="0%" style={{stopColor: '#c084fc', stopOpacity: 0.7}} />
+              <stop offset="50%" style={{stopColor: '#22d3ee', stopOpacity: 1}} />
+              <stop offset="100%" style={{stopColor: '#14b8a6', stopOpacity: 0.7}} />
             </linearGradient>
           </defs>
 
