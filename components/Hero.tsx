@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Rocket, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -84,7 +85,7 @@ const Hero = () => {
                 className="group px-8 py-4 bg-gradient-accent text-white rounded-full font-semibold text-lg hover:glow-effect transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
               >
                 <span>Get Started Free</span>
-                <span className="group-hover:translate-x-1 transition-transform">🚀</span>
+                <Rocket className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="#how-it-works"

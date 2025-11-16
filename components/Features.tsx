@@ -2,40 +2,46 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Zap, Globe, Gem, Target, RefreshCw, Handshake, type LucideIcon } from 'lucide-react';
 
-const features = [
+const features: Array<{
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  image: string;
+}> = [
   {
-    icon: '⚡',
+    icon: Zap,
     title: '7-Day Delivery',
     description: 'Your app ready in one week, guaranteed.',
     image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80',
   },
   {
-    icon: '🌐',
+    icon: Globe,
     title: 'Any Business Type',
     description: 'E-commerce, mobile apps, websites - we build it all.',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
   },
   {
-    icon: '💎',
+    icon: Gem,
     title: 'Professional Quality',
     description: 'Top-grade code that actually works and scales.',
     image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&q=80',
   },
   {
-    icon: '🎯',
+    icon: Target,
     title: 'No Wasted Features',
     description: 'Only what you need. Nothing extra. Pure value.',
     image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80',
   },
   {
-    icon: '🔄',
+    icon: RefreshCw,
     title: 'You Stay In Control',
     description: 'See progress daily. Give feedback anytime.',
     image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80',
   },
   {
-    icon: '🤝',
+    icon: Handshake,
     title: 'Complete Support',
     description: 'Help from idea to launch and beyond. Always there.',
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80',
@@ -95,8 +101,9 @@ const Features = () => {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    {feature.icon}
+                  <div className="relative inline-block mb-6">
+                    <feature.icon className="w-14 h-14 text-cyan-400 group-hover:text-white transition-colors duration-300 group-hover:scale-110" strokeWidth={2} />
+                    <div className="absolute inset-0 bg-cyan-400/20 blur-xl group-hover:bg-cyan-400/30 transition-all"></div>
                   </div>
                   <h3 className="text-2xl font-bold mb-4 font-display group-hover:text-transparent group-hover:bg-gradient-accent group-hover:bg-clip-text transition-all duration-300">
                     {feature.title}

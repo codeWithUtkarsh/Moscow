@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { Waves } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +35,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="#home" className="flex items-center space-x-3 group">
-            <div className="text-4xl animate-float">🌊</div>
+            <div className="relative">
+              <Waves className="w-10 h-10 text-cyan-400 animate-float" strokeWidth={2.5} />
+              <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full"></div>
+            </div>
             <span className="text-2xl font-bold bg-gradient-accent bg-clip-text text-transparent font-display">
               Atlantis.AI
             </span>

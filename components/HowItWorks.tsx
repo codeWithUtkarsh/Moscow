@@ -2,27 +2,34 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FileText, Wrench, Rocket, type LucideIcon } from 'lucide-react';
 
-const steps = [
+const steps: Array<{
+  number: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  image: string;
+}> = [
   {
     number: '01',
     title: 'Tell Us Your Idea',
     description: 'Describe your app in simple words. No tech knowledge needed.',
-    icon: '📝',
+    icon: FileText,
     image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80',
   },
   {
     number: '02',
     title: 'We Build Your App',
     description: 'We code, design, and test everything. You just watch and give feedback.',
-    icon: '🛠️',
+    icon: Wrench,
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80',
   },
   {
     number: '03',
     title: 'Launch & Make Money',
     description: 'Get your ready app. Start getting customers. Begin earning.',
-    icon: '🚀',
+    icon: Rocket,
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80',
   },
 ];
@@ -76,7 +83,10 @@ const HowItWorks = () => {
                     <div className="text-7xl font-bold bg-gradient-accent bg-clip-text text-transparent font-display">
                       {step.number}
                     </div>
-                    <div className="text-6xl">{step.icon}</div>
+                    <div className="relative">
+                      <step.icon className="w-16 h-16 text-cyan-400" strokeWidth={2} />
+                      <div className="absolute inset-0 bg-cyan-400/20 blur-2xl"></div>
+                    </div>
                   </div>
                   <h3 className="text-4xl font-bold font-display">
                     {step.title}
@@ -123,8 +133,8 @@ const HowItWorks = () => {
                   {/* Overlay Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center text-3xl">
-                        {step.icon}
+                      <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center">
+                        <step.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
                       </div>
                       <div>
                         <div className="text-2xl font-bold text-white">

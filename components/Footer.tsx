@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Waves, Twitter, Linkedin, Github, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,10 +29,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: '𝕏', label: 'Twitter', href: '#' },
-    { icon: '💼', label: 'LinkedIn', href: '#' },
-    { icon: '💻', label: 'GitHub', href: '#' },
-    { icon: '📱', label: 'Discord', href: '#' },
+    { icon: Twitter, label: 'Twitter', href: '#' },
+    { icon: Linkedin, label: 'LinkedIn', href: '#' },
+    { icon: Github, label: 'GitHub', href: '#' },
+    { icon: MessageSquare, label: 'Discord', href: '#' },
   ];
 
   return (
@@ -54,7 +55,10 @@ const Footer = () => {
               className="space-y-6"
             >
               <Link href="#home" className="flex items-center space-x-3 group">
-                <div className="text-4xl">🌊</div>
+                <div className="relative">
+                  <Waves className="w-10 h-10 text-cyan-400" strokeWidth={2.5} />
+                  <div className="absolute inset-0 bg-cyan-400/20 blur-xl rounded-full"></div>
+                </div>
                 <span className="text-2xl font-bold bg-gradient-accent bg-clip-text text-transparent font-display">
                   Atlantis.AI
                 </span>
@@ -72,11 +76,9 @@ const Footer = () => {
                     href={social.href}
                     aria-label={social.label}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="w-12 h-12 glass-effect rounded-xl flex items-center justify-center text-xl hover:bg-gradient-accent transition-all duration-300 group"
+                    className="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-gradient-accent transition-all duration-300 group"
                   >
-                    <span className="group-hover:scale-110 transition-transform">
-                      {social.icon}
-                    </span>
+                    <social.icon className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all" />
                   </motion.a>
                 ))}
               </div>

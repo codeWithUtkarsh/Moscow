@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Rocket, DollarSign, Target, Sparkles, Mail, type LucideIcon } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -117,26 +118,26 @@ const Signup = () => {
 
             {/* Benefits */}
             <div className="space-y-6">
-              {[
+              {([
                 {
-                  icon: '🚀',
+                  icon: Rocket,
                   title: 'Ready in 7 Days',
                   description: 'App delivered in one week',
                   image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80',
                 },
                 {
-                  icon: '💰',
+                  icon: DollarSign,
                   title: 'Save $25K+',
                   description: 'Free for first 5 people',
                   image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&q=80',
                 },
                 {
-                  icon: '🎯',
+                  icon: Target,
                   title: 'Start Earning Fast',
                   description: 'Launch and make money quickly',
                   image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80',
                 },
-              ].map((benefit, index) => (
+              ] as Array<{icon: LucideIcon; title: string; description: string; image: string}>).map((benefit, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -30 }}
@@ -155,8 +156,8 @@ const Signup = () => {
                         className="object-cover opacity-50 group-hover:opacity-100 transition-opacity"
                       />
                     </div>
-                    <div className="absolute inset-0 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
-                      {benefit.icon}
+                    <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <benefit.icon className="w-8 h-8 text-white" strokeWidth={2} />
                     </div>
                   </div>
                   <div className="flex-1">
@@ -357,7 +358,9 @@ const Signup = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
                   >
-                    <div className="text-7xl mb-6">🎉</div>
+                    <div className="mb-6 flex justify-center">
+                      <Sparkles className="w-16 h-16 text-yellow-400" strokeWidth={2} />
+                    </div>
                     <h3 className="text-3xl font-bold font-display mb-4">
                       Application Submitted!
                     </h3>
@@ -366,7 +369,7 @@ const Signup = () => {
                       Check your inbox!
                     </p>
                     <div className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-accent/20 rounded-full">
-                      <span>📧</span>
+                      <Mail className="w-5 h-5 text-cyan-400" />
                       <span className="text-sm">{formData.email}</span>
                     </div>
                   </motion.div>

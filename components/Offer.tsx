@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Check, Gift, Clock } from 'lucide-react';
 
 const Offer = () => {
   return (
@@ -120,7 +121,7 @@ const Offer = () => {
                   >
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                        <span className="text-white font-bold">{feature.icon}</span>
+                        <Check className="w-5 h-5 text-white" strokeWidth={3} />
                       </div>
                       <div className="flex-1">
                         <div className="text-white font-semibold mb-1">
@@ -166,13 +167,11 @@ const Offer = () => {
                   className="inline-flex items-center space-x-3 px-12 py-6 bg-gradient-accent text-white rounded-full font-bold text-xl hover:glow-effect transition-all duration-300 hover:scale-105 group"
                 >
                   <span>Claim Your Free Spot</span>
-                  <span className="text-2xl group-hover:translate-x-2 transition-transform">
-                    🎁
-                  </span>
+                  <Gift className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
 
                 <div className="flex items-center justify-center space-x-2 text-pink-400 font-semibold">
-                  <span className="text-2xl">⏰</span>
+                  <Clock className="w-6 h-6" />
                   <span>Hurry! Only 5 spots available</span>
                 </div>
               </motion.div>
