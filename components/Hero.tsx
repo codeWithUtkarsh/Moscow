@@ -94,14 +94,14 @@ const Hero = () => {
             </path>
           </svg>
 
-          {/* Atlantis Ship - Sailing Confidently Through Storm */}
+          {/* Atlantis Ship - Majestic Colorful Ship on Right Side */}
           <motion.div
             className="absolute"
-            style={{ left: '12%', bottom: '28%' }}
+            style={{ right: '8%', bottom: '22%' }}
             animate={{
-              y: [0, -30, 5, -25, 0],
-              x: [0, 10, -5, 15, 0],
-              rotate: [0, -4, 2, -3, 0]
+              y: [0, -35, 5, -30, 0],
+              x: [0, 12, -6, 18, 0],
+              rotate: [0, -5, 3, -4, 0]
             }}
             transition={{
               duration: 6,
@@ -109,14 +109,38 @@ const Hero = () => {
               ease: "easeInOut"
             }}
           >
-            <svg width="500" height="500" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <svg width="700" height="700" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="shipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#a78bfa', stopOpacity: 0.9}} />
-                  <stop offset="100%" style={{stopColor: '#6366f1', stopOpacity: 0.9}} />
+                  <stop offset="0%" style={{stopColor: '#ec4899', stopOpacity: 1}} />
+                  <stop offset="25%" style={{stopColor: '#a78bfa', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#6366f1', stopOpacity: 1}} />
+                  <stop offset="75%" style={{stopColor: '#06b6d4', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#8b5cf6', stopOpacity: 1}} />
+                </linearGradient>
+                <linearGradient id="sailGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 0.9}} />
+                  <stop offset="50%" style={{stopColor: '#f59e0b', stopOpacity: 0.95}} />
+                  <stop offset="100%" style={{stopColor: '#d97706', stopOpacity: 0.9}} />
+                </linearGradient>
+                <linearGradient id="sailGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.9}} />
+                  <stop offset="50%" style={{stopColor: '#0891b2', stopOpacity: 0.95}} />
+                  <stop offset="100%" style={{stopColor: '#0e7490', stopOpacity: 0.9}} />
+                </linearGradient>
+                <linearGradient id="deckGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#d97706', stopOpacity: 1}} />
                 </linearGradient>
                 <filter id="shipGlow">
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+                <filter id="strongGlow">
+                  <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
                   <feMerge>
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
@@ -124,54 +148,110 @@ const Hero = () => {
                 </filter>
               </defs>
 
-              {/* Ship Hull */}
-              <path d="M 50 140 Q 40 120, 50 100 L 70 100 L 130 100 L 150 100 Q 160 120, 150 140 L 140 145 L 60 145 Z"
-                fill="url(#shipGradient)" stroke="#e0e7ff" strokeWidth="2" filter="url(#shipGlow)" opacity="0.9"/>
+              {/* Ship Hull - Larger and More Detailed */}
+              <path d="M 45 145 Q 35 115, 48 95 L 55 92 L 72 88 L 128 88 L 145 92 L 152 95 Q 165 115, 155 145 L 148 152 L 52 152 Z"
+                fill="url(#shipGradient)" stroke="#fff" strokeWidth="3" filter="url(#strongGlow)" opacity="1"/>
 
-              {/* Main Mast */}
-              <rect x="95" y="50" width="4" height="60" fill="#e0e7ff" filter="url(#shipGlow)" opacity="0.8"/>
+              {/* Hull Details - Sharp Lines */}
+              <path d="M 55 92 L 58 140" stroke="#fbbf24" strokeWidth="2" opacity="0.8" filter="url(#shipGlow)"/>
+              <path d="M 145 92 L 142 140" stroke="#fbbf24" strokeWidth="2" opacity="0.8" filter="url(#shipGlow)"/>
+              <path d="M 70 90 Q 100 88, 130 90" stroke="#06b6d4" strokeWidth="2" opacity="0.9" fill="none" filter="url(#shipGlow)"/>
 
-              {/* Sail 1 - Main Sail */}
-              <path d="M 99 55 Q 130 70, 135 85 L 99 95 Z" fill="#a78bfa" stroke="#e0e7ff" strokeWidth="1.5" opacity="0.7">
-                <animate attributeName="d" dur="4s" repeatCount="indefinite"
-                  values="M 99 55 Q 130 70, 135 85 L 99 95 Z;
-                          M 99 55 Q 135 70, 140 85 L 99 95 Z;
-                          M 99 55 Q 130 70, 135 85 L 99 95 Z" />
+              {/* Deck */}
+              <ellipse cx="100" cy="95" rx="50" ry="8" fill="url(#deckGradient)" stroke="#fff" strokeWidth="1.5" opacity="0.9" filter="url(#shipGlow)"/>
+
+              {/* Main Mast - Thicker */}
+              <rect x="93" y="35" width="6" height="65" fill="#fff" filter="url(#strongGlow)" opacity="0.95"/>
+              <rect x="94" y="36" width="4" height="63" fill="url(#shipGradient)" opacity="0.8"/>
+
+              {/* Front Mast */}
+              <rect x="68" y="50" width="5" height="50" fill="#fff" filter="url(#shipGlow)" opacity="0.9"/>
+              <rect x="69" y="51" width="3" height="48" fill="url(#sailGradient2)" opacity="0.7"/>
+
+              {/* Rear Mast */}
+              <rect x="128" y="55" width="5" height="45" fill="#fff" filter="url(#shipGlow)" opacity="0.9"/>
+              <rect x="129" y="56" width="3" height="43" fill="url(#sailGradient1)" opacity="0.7"/>
+
+              {/* Main Sail - Large and Colorful */}
+              <path d="M 96 40 Q 135 60, 140 90 L 96 85 Z" fill="url(#sailGradient1)" stroke="#fff" strokeWidth="2.5" opacity="0.85" filter="url(#shipGlow)">
+                <animate attributeName="d" dur="3.5s" repeatCount="indefinite"
+                  values="M 96 40 Q 135 60, 140 90 L 96 85 Z;
+                          M 96 40 Q 145 60, 150 90 L 96 85 Z;
+                          M 96 40 Q 135 60, 140 90 L 96 85 Z" />
               </path>
 
-              {/* Sail 2 - Front Sail */}
-              <path d="M 97 65 Q 70 75, 65 90 L 97 100 Z" fill="#6366f1" stroke="#e0e7ff" strokeWidth="1.5" opacity="0.7">
-                <animate attributeName="d" dur="4s" repeatCount="indefinite"
-                  values="M 97 65 Q 70 75, 65 90 L 97 100 Z;
-                          M 97 65 Q 65 75, 60 90 L 97 100 Z;
-                          M 97 65 Q 70 75, 65 90 L 97 100 Z" />
+              {/* Front Sail - Cyan */}
+              <path d="M 71 55 Q 45 70, 40 95 L 71 90 Z" fill="url(#sailGradient2)" stroke="#fff" strokeWidth="2.5" opacity="0.85" filter="url(#shipGlow)">
+                <animate attributeName="d" dur="3.5s" repeatCount="indefinite"
+                  values="M 71 55 Q 45 70, 40 95 L 71 90 Z;
+                          M 71 55 Q 35 70, 30 95 L 71 90 Z;
+                          M 71 55 Q 45 70, 40 95 L 71 90 Z" />
               </path>
 
-              {/* Decorative Details */}
-              <circle cx="100" cy="110" r="3" fill="#fbbf24" opacity="0.8" filter="url(#shipGlow)"/>
-              <path d="M 60 145 Q 100 150, 140 145" stroke="#fbbf24" strokeWidth="2" fill="none" opacity="0.6"/>
+              {/* Rear Sail */}
+              <path d="M 131 60 Q 155 75, 160 95 L 131 90 Z" fill="url(#sailGradient1)" stroke="#fff" strokeWidth="2.5" opacity="0.85" filter="url(#shipGlow)">
+                <animate attributeName="d" dur="3.5s" repeatCount="indefinite"
+                  values="M 131 60 Q 155 75, 160 95 L 131 90 Z;
+                          M 131 60 Q 165 75, 170 95 L 131 90 Z;
+                          M 131 60 Q 155 75, 160 95 L 131 90 Z" />
+              </path>
 
-              {/* Mystical Glow at Ship Base - Enhanced for Storm */}
-              <ellipse cx="100" cy="145" rx="60" ry="12" fill="#06b6d4" opacity="0.4" filter="url(#shipGlow)">
-                <animate attributeName="opacity" dur="2.5s" repeatCount="indefinite"
-                  values="0.4;0.7;0.4" />
-                <animate attributeName="rx" dur="2.5s" repeatCount="indefinite"
-                  values="60;70;60" />
+              {/* Ornamental Details */}
+              <circle cx="100" cy="105" r="5" fill="#fbbf24" stroke="#fff" strokeWidth="2" opacity="0.95" filter="url(#strongGlow)"/>
+              <path d="M 52 152 Q 100 158, 148 152" stroke="#fbbf24" strokeWidth="3" fill="none" opacity="0.85" filter="url(#shipGlow)"/>
+
+              {/* Windows/Portholes */}
+              <circle cx="70" cy="110" r="3" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.9" filter="url(#shipGlow)"/>
+              <circle cx="85" cy="108" r="3" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.9" filter="url(#shipGlow)"/>
+              <circle cx="115" cy="108" r="3" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.9" filter="url(#shipGlow)"/>
+              <circle cx="130" cy="110" r="3" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.9" filter="url(#shipGlow)"/>
+
+              {/* Mystical Glow at Ship Base - Multi-colored */}
+              <ellipse cx="100" cy="152" rx="70" ry="15" fill="#ec4899" opacity="0.3" filter="url(#strongGlow)">
+                <animate attributeName="opacity" dur="2s" repeatCount="indefinite"
+                  values="0.3;0.6;0.3" />
+                <animate attributeName="rx" dur="2s" repeatCount="indefinite"
+                  values="70;85;70" />
               </ellipse>
 
-              {/* Storm Lightning Glow */}
-              <circle cx="100" cy="90" r="40" fill="#a78bfa" opacity="0.1" filter="url(#shipGlow)">
-                <animate attributeName="opacity" dur="5s" repeatCount="indefinite"
-                  values="0.1;0.3;0.1;0.1;0.1" />
+              <ellipse cx="100" cy="152" rx="60" ry="12" fill="#06b6d4" opacity="0.5" filter="url(#strongGlow)">
+                <animate attributeName="opacity" dur="2.5s" repeatCount="indefinite"
+                  values="0.5;0.8;0.5" />
+                <animate attributeName="rx" dur="2.5s" repeatCount="indefinite"
+                  values="60;75;60" />
+              </ellipse>
+
+              {/* Rainbow Aura Around Ship */}
+              <circle cx="100" cy="100" r="80" fill="none" stroke="url(#shipGradient)" strokeWidth="2" opacity="0.15" filter="url(#strongGlow)">
+                <animate attributeName="r" dur="3s" repeatCount="indefinite"
+                  values="80;90;80" />
+                <animate attributeName="opacity" dur="3s" repeatCount="indefinite"
+                  values="0.15;0.25;0.15" />
               </circle>
 
-              {/* Flag */}
-              <rect x="99" y="48" width="1" height="8" fill="#e0e7ff" opacity="0.8"/>
-              <path d="M 100 48 L 115 52 L 100 56 Z" fill="#ec4899" opacity="0.8">
-                <animate attributeName="d" dur="2s" repeatCount="indefinite"
-                  values="M 100 48 L 115 52 L 100 56 Z;
-                          M 100 48 L 118 52 L 100 56 Z;
-                          M 100 48 L 115 52 L 100 56 Z" />
+              {/* Flags - Colorful */}
+              <rect x="95" y="32" width="2" height="10" fill="#fff" opacity="0.9"/>
+              <path d="M 97 32 L 115 37 L 97 42 Z" fill="#ec4899" stroke="#fff" strokeWidth="1" opacity="0.95" filter="url(#shipGlow)">
+                <animate attributeName="d" dur="1.8s" repeatCount="indefinite"
+                  values="M 97 32 L 115 37 L 97 42 Z;
+                          M 97 32 L 120 37 L 97 42 Z;
+                          M 97 32 L 115 37 L 97 42 Z" />
+              </path>
+
+              <rect x="69" y="48" width="2" height="8" fill="#fff" opacity="0.9"/>
+              <path d="M 71 48 L 85 52 L 71 56 Z" fill="#fbbf24" stroke="#fff" strokeWidth="1" opacity="0.95" filter="url(#shipGlow)">
+                <animate attributeName="d" dur="1.8s" repeatCount="indefinite"
+                  values="M 71 48 L 85 52 L 71 56 Z;
+                          M 71 48 L 90 52 L 71 56 Z;
+                          M 71 48 L 85 52 L 71 56 Z" />
+              </path>
+
+              <rect x="130" y="53" width="2" height="8" fill="#fff" opacity="0.9"/>
+              <path d="M 132 53 L 146 57 L 132 61 Z" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.95" filter="url(#shipGlow)">
+                <animate attributeName="d" dur="1.8s" repeatCount="indefinite"
+                  values="M 132 53 L 146 57 L 132 61 Z;
+                          M 132 53 L 151 57 L 132 61 Z;
+                          M 132 53 L 146 57 L 132 61 Z" />
               </path>
             </svg>
           </motion.div>
@@ -182,7 +262,7 @@ const Hero = () => {
               key={i}
               className="absolute bg-white rounded-full"
               style={{
-                left: `${8 + i * 6}%`,
+                right: `${5 + i * 3}%`,
                 bottom: `${20 + (i % 5) * 7}%`,
                 width: i % 3 === 0 ? '6px' : '5px',
                 height: i % 3 === 0 ? '6px' : '5px',
@@ -206,7 +286,7 @@ const Hero = () => {
               key={`sparkle-${i}`}
               className="absolute bg-cyan-300 rounded-full"
               style={{
-                left: `${10 + i * 4}%`,
+                right: `${6 + i * 2.5}%`,
                 bottom: `${25 + (i % 3) * 8}%`,
                 width: i % 2 === 0 ? '5px' : '4px',
                 height: i % 2 === 0 ? '5px' : '4px',
