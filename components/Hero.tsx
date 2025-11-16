@@ -81,65 +81,96 @@ const Hero = () => {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
 
-        {/* Animated Ocean Waves with Atlantis Ship */}
-        <div className="absolute bottom-0 left-0 right-0 h-[400px] opacity-30 overflow-hidden">
-          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 400">
+        {/* Dramatic Storm Waves with Atlantis Ship */}
+        <div className="absolute bottom-0 left-0 right-0 h-[600px] opacity-40 overflow-hidden">
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 600">
             <defs>
-              <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.3}} />
-                <stop offset="100%" style={{stopColor: '#0891b2', stopOpacity: 0.6}} />
+              <linearGradient id="stormWave1" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style={{stopColor: '#0c4a6e', stopOpacity: 0.8}} />
+                <stop offset="50%" style={{stopColor: '#06b6d4', stopOpacity: 0.9}} />
+                <stop offset="100%" style={{stopColor: '#164e63', stopOpacity: 1}} />
               </linearGradient>
-              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.2}} />
-                <stop offset="100%" style={{stopColor: '#0284c7', stopOpacity: 0.5}} />
+              <linearGradient id="stormWave2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style={{stopColor: '#0e7490', stopOpacity: 0.7}} />
+                <stop offset="50%" style={{stopColor: '#0891b2', stopOpacity: 0.85}} />
+                <stop offset="100%" style={{stopColor: '#155e75', stopOpacity: 0.95}} />
               </linearGradient>
-              <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#0ea5e9', stopOpacity: 0.15}} />
-                <stop offset="100%" style={{stopColor: '#0369a1', stopOpacity: 0.4}} />
+              <linearGradient id="stormWave3" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style={{stopColor: '#075985', stopOpacity: 0.6}} />
+                <stop offset="50%" style={{stopColor: '#0ea5e9', stopOpacity: 0.75}} />
+                <stop offset="100%" style={{stopColor: '#0c4a6e', stopOpacity: 0.9}} />
               </linearGradient>
+              <filter id="turbulence">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="turbulence"/>
+                <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
             </defs>
 
-            {/* Wave Layer 3 - Back */}
-            <path fill="url(#waveGradient3)" d="M0,200 Q360,150 720,200 T1440,200 L1440,400 L0,400 Z">
-              <animate attributeName="d" dur="20s" repeatCount="indefinite"
-                values="M0,200 Q360,150 720,200 T1440,200 L1440,400 L0,400 Z;
-                        M0,200 Q360,250 720,200 T1440,200 L1440,400 L0,400 Z;
-                        M0,200 Q360,150 720,200 T1440,200 L1440,400 L0,400 Z" />
+            {/* Storm Wave Layer 5 - Far Back - Huge Waves */}
+            <path fill="url(#stormWave3)" d="M0,100 Q200,20 400,100 T800,100 Q1000,20 1200,100 T1440,100 L1440,600 L0,600 Z">
+              <animate attributeName="d" dur="7s" repeatCount="indefinite"
+                values="M0,100 Q200,20 400,100 T800,100 Q1000,20 1200,100 T1440,100 L1440,600 L0,600 Z;
+                        M0,100 Q200,180 400,100 T800,100 Q1000,180 1200,100 T1440,100 L1440,600 L0,600 Z;
+                        M0,100 Q200,20 400,100 T800,100 Q1000,20 1200,100 T1440,100 L1440,600 L0,600 Z" />
             </path>
 
-            {/* Wave Layer 2 - Middle */}
-            <path fill="url(#waveGradient2)" d="M0,240 Q360,200 720,240 T1440,240 L1440,400 L0,400 Z">
-              <animate attributeName="d" dur="15s" repeatCount="indefinite"
-                values="M0,240 Q360,200 720,240 T1440,240 L1440,400 L0,400 Z;
-                        M0,240 Q360,280 720,240 T1440,240 L1440,400 L0,400 Z;
-                        M0,240 Q360,200 720,240 T1440,240 L1440,400 L0,400 Z" />
+            {/* Storm Wave Layer 4 - Large Swells */}
+            <path fill="url(#stormWave2)" d="M0,180 Q300,80 600,180 T1200,180 Q1320,80 1440,180 L1440,600 L0,600 Z">
+              <animate attributeName="d" dur="6s" repeatCount="indefinite"
+                values="M0,180 Q300,80 600,180 T1200,180 Q1320,80 1440,180 L1440,600 L0,600 Z;
+                        M0,180 Q300,280 600,180 T1200,180 Q1320,280 1440,180 L1440,600 L0,600 Z;
+                        M0,180 Q300,80 600,180 T1200,180 Q1320,80 1440,180 L1440,600 L0,600 Z" />
             </path>
 
-            {/* Wave Layer 1 - Front */}
-            <path fill="url(#waveGradient1)" d="M0,280 Q360,240 720,280 T1440,280 L1440,400 L0,400 Z">
-              <animate attributeName="d" dur="12s" repeatCount="indefinite"
-                values="M0,280 Q360,240 720,280 T1440,280 L1440,400 L0,400 Z;
-                        M0,280 Q360,320 720,280 T1440,280 L1440,400 L0,400 Z;
-                        M0,280 Q360,240 720,280 T1440,280 L1440,400 L0,400 Z" />
+            {/* Storm Wave Layer 3 - Turbulent Mid Waves */}
+            <path fill="url(#stormWave1)" d="M0,260 Q240,160 480,260 T960,260 Q1200,160 1440,260 L1440,600 L0,600 Z">
+              <animate attributeName="d" dur="5s" repeatCount="indefinite"
+                values="M0,260 Q240,160 480,260 T960,260 Q1200,160 1440,260 L1440,600 L0,600 Z;
+                        M0,260 Q240,360 480,260 T960,260 Q1200,360 1440,260 L1440,600 L0,600 Z;
+                        M0,260 Q240,160 480,260 T960,260 Q1200,160 1440,260 L1440,600 L0,600 Z" />
+            </path>
+
+            {/* Storm Wave Layer 2 - Aggressive Waves */}
+            <path fill="url(#stormWave2)" d="M0,340 Q180,220 360,340 T720,340 Q900,220 1080,340 T1440,340 L1440,600 L0,600 Z" opacity="0.9">
+              <animate attributeName="d" dur="4s" repeatCount="indefinite"
+                values="M0,340 Q180,220 360,340 T720,340 Q900,220 1080,340 T1440,340 L1440,600 L0,600 Z;
+                        M0,340 Q180,420 360,340 T720,340 Q900,420 1080,340 T1440,340 L1440,600 L0,600 Z;
+                        M0,340 Q180,220 360,340 T720,340 Q900,220 1080,340 T1440,340 L1440,600 L0,600 Z" />
+            </path>
+
+            {/* Storm Wave Layer 1 - Front Crashing Waves */}
+            <path fill="url(#stormWave1)" d="M0,420 Q120,300 240,420 T480,420 Q600,300 720,420 T960,420 Q1080,300 1200,420 T1440,420 L1440,600 L0,600 Z" opacity="0.95">
+              <animate attributeName="d" dur="3s" repeatCount="indefinite"
+                values="M0,420 Q120,300 240,420 T480,420 Q600,300 720,420 T960,420 Q1080,300 1200,420 T1440,420 L1440,600 L0,600 Z;
+                        M0,420 Q120,500 240,420 T480,420 Q600,500 720,420 T960,420 Q1080,500 1200,420 T1440,420 L1440,600 L0,600 Z;
+                        M0,420 Q120,300 240,420 T480,420 Q600,300 720,420 T960,420 Q1080,300 1200,420 T1440,420 L1440,600 L0,600 Z" />
+            </path>
+
+            {/* White Foam Caps on Storm Waves */}
+            <path fill="#ffffff" opacity="0.15" d="M100,380 Q150,360 200,380 T300,380 M500,380 Q550,360 600,380 T700,380 M900,380 Q950,360 1000,380 T1100,380">
+              <animate attributeName="d" dur="3s" repeatCount="indefinite"
+                values="M100,380 Q150,360 200,380 T300,380 M500,380 Q550,360 600,380 T700,380 M900,380 Q950,360 1000,380 T1100,380;
+                        M100,420 Q150,400 200,420 T300,420 M500,420 Q550,400 600,420 T700,420 M900,420 Q950,400 1000,420 T1100,420;
+                        M100,380 Q150,360 200,380 T300,380 M500,380 Q550,360 600,380 T700,380 M900,380 Q950,360 1000,380 T1100,380" />
             </path>
           </svg>
 
-          {/* Atlantis Ship - Sailing on Waves */}
+          {/* Atlantis Ship - Sailing Confidently Through Storm */}
           <motion.div
             className="absolute"
-            style={{ left: '15%', bottom: '45%' }}
+            style={{ left: '18%', bottom: '35%' }}
             animate={{
-              y: [0, -15, 0, -10, 0],
-              x: [0, 10, 0, -5, 0],
-              rotate: [0, -2, 0, 2, 0]
+              y: [0, -25, 5, -20, 0],
+              x: [0, 8, -3, 12, 0],
+              rotate: [0, -4, 2, -3, 0]
             }}
             transition={{
-              duration: 8,
+              duration: 6,
               repeat: Infinity,
               ease: "easeInOut"
             }}
           >
-            <svg width="180" height="180" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <svg width="220" height="220" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="shipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" style={{stopColor: '#a78bfa', stopOpacity: 0.9}} />
@@ -181,11 +212,19 @@ const Hero = () => {
               <circle cx="100" cy="110" r="3" fill="#fbbf24" opacity="0.8" filter="url(#shipGlow)"/>
               <path d="M 60 145 Q 100 150, 140 145" stroke="#fbbf24" strokeWidth="2" fill="none" opacity="0.6"/>
 
-              {/* Mystical Glow at Ship Base */}
-              <ellipse cx="100" cy="145" rx="50" ry="8" fill="#06b6d4" opacity="0.3" filter="url(#shipGlow)">
-                <animate attributeName="opacity" dur="3s" repeatCount="indefinite"
-                  values="0.3;0.5;0.3" />
+              {/* Mystical Glow at Ship Base - Enhanced for Storm */}
+              <ellipse cx="100" cy="145" rx="60" ry="12" fill="#06b6d4" opacity="0.4" filter="url(#shipGlow)">
+                <animate attributeName="opacity" dur="2.5s" repeatCount="indefinite"
+                  values="0.4;0.7;0.4" />
+                <animate attributeName="rx" dur="2.5s" repeatCount="indefinite"
+                  values="60;70;60" />
               </ellipse>
+
+              {/* Storm Lightning Glow */}
+              <circle cx="100" cy="90" r="40" fill="#a78bfa" opacity="0.1" filter="url(#shipGlow)">
+                <animate attributeName="opacity" dur="5s" repeatCount="indefinite"
+                  values="0.1;0.3;0.1;0.1;0.1" />
+              </circle>
 
               {/* Flag */}
               <rect x="99" y="48" width="1" height="8" fill="#e0e7ff" opacity="0.8"/>
@@ -198,23 +237,47 @@ const Hero = () => {
             </svg>
           </motion.div>
 
-          {/* Sparkles on Water */}
-          {[...Array(8)].map((_, i) => (
+          {/* Storm Spray and Foam Effects */}
+          {[...Array(12)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-cyan-400 rounded-full"
+              className="absolute bg-white rounded-full"
               style={{
-                left: `${15 + i * 10}%`,
-                bottom: `${40 + (i % 3) * 5}%`,
+                left: `${10 + i * 7}%`,
+                bottom: `${25 + (i % 4) * 8}%`,
+                width: i % 3 === 0 ? '4px' : '3px',
+                height: i % 3 === 0 ? '4px' : '3px',
+              }}
+              animate={{
+                opacity: [0, 0.8, 0],
+                scale: [0, 1.5, 0],
+                y: [0, -20, -40],
+              }}
+              transition={{
+                duration: 2 + (i % 3),
+                repeat: Infinity,
+                delay: i * 0.3,
+              }}
+            />
+          ))}
+
+          {/* Mystical Blue Sparkles Around Ship */}
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={`sparkle-${i}`}
+              className="absolute w-3 h-3 bg-cyan-300 rounded-full"
+              style={{
+                left: `${16 + i * 3}%`,
+                bottom: `${32 + (i % 2) * 6}%`,
               }}
               animate={{
                 opacity: [0, 1, 0],
-                scale: [0, 1, 0],
+                scale: [0, 1.2, 0],
               }}
               transition={{
-                duration: 3,
+                duration: 2.5,
                 repeat: Infinity,
-                delay: i * 0.4,
+                delay: i * 0.5,
               }}
             />
           ))}
