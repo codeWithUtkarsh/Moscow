@@ -16,67 +16,6 @@ const Hero = () => {
         {/* Animated grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e33_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e33_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
 
-        {/* Glowing Vector Shapes - Silver Lining Effect */}
-        <svg className="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-            <linearGradient id="silverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{stopColor: '#a78bfa', stopOpacity: 0.8}} />
-              <stop offset="50%" style={{stopColor: '#e0e7ff', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#6366f1', stopOpacity: 0.8}} />
-            </linearGradient>
-          </defs>
-
-          {/* Organic cloud-like shapes with glowing edges */}
-          <path
-            d="M 100 200 Q 200 150, 350 200 T 650 200 Q 750 250, 800 200 L 800 0 L 100 0 Z"
-            fill="none"
-            stroke="url(#silverGradient)"
-            strokeWidth="2"
-            filter="url(#glow)"
-            opacity="0.6"
-          />
-
-          <path
-            d="M 1920 600 Q 1600 550, 1400 600 T 1000 600 Q 800 650, 600 600 L 600 800 L 1920 800 Z"
-            fill="none"
-            stroke="url(#silverGradient)"
-            strokeWidth="2"
-            filter="url(#glow)"
-            opacity="0.5"
-          />
-
-          <ellipse
-            cx="30%"
-            cy="40%"
-            rx="300"
-            ry="200"
-            fill="none"
-            stroke="url(#silverGradient)"
-            strokeWidth="1.5"
-            filter="url(#glow)"
-            opacity="0.3"
-          />
-
-          <ellipse
-            cx="75%"
-            cy="65%"
-            rx="250"
-            ry="180"
-            fill="none"
-            stroke="url(#silverGradient)"
-            strokeWidth="1.5"
-            filter="url(#glow)"
-            opacity="0.4"
-          />
-        </svg>
-
         {/* Glowing orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
@@ -158,10 +97,10 @@ const Hero = () => {
           {/* Atlantis Ship - Sailing Confidently Through Storm */}
           <motion.div
             className="absolute"
-            style={{ left: '18%', bottom: '35%' }}
+            style={{ left: '12%', bottom: '28%' }}
             animate={{
-              y: [0, -25, 5, -20, 0],
-              x: [0, 8, -3, 12, 0],
+              y: [0, -30, 5, -25, 0],
+              x: [0, 10, -5, 15, 0],
               rotate: [0, -4, 2, -3, 0]
             }}
             transition={{
@@ -170,7 +109,7 @@ const Hero = () => {
               ease: "easeInOut"
             }}
           >
-            <svg width="220" height="220" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <svg width="500" height="500" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="shipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" style={{stopColor: '#a78bfa', stopOpacity: 0.9}} />
@@ -238,20 +177,20 @@ const Hero = () => {
           </motion.div>
 
           {/* Storm Spray and Foam Effects */}
-          {[...Array(12)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute bg-white rounded-full"
               style={{
-                left: `${10 + i * 7}%`,
-                bottom: `${25 + (i % 4) * 8}%`,
-                width: i % 3 === 0 ? '4px' : '3px',
-                height: i % 3 === 0 ? '4px' : '3px',
+                left: `${8 + i * 6}%`,
+                bottom: `${20 + (i % 5) * 7}%`,
+                width: i % 3 === 0 ? '6px' : '5px',
+                height: i % 3 === 0 ? '6px' : '5px',
               }}
               animate={{
                 opacity: [0, 0.8, 0],
-                scale: [0, 1.5, 0],
-                y: [0, -20, -40],
+                scale: [0, 1.8, 0],
+                y: [0, -30, -60],
               }}
               transition={{
                 duration: 2 + (i % 3),
@@ -262,22 +201,24 @@ const Hero = () => {
           ))}
 
           {/* Mystical Blue Sparkles Around Ship */}
-          {[...Array(6)].map((_, i) => (
+          {[...Array(10)].map((_, i) => (
             <motion.div
               key={`sparkle-${i}`}
-              className="absolute w-3 h-3 bg-cyan-300 rounded-full"
+              className="absolute bg-cyan-300 rounded-full"
               style={{
-                left: `${16 + i * 3}%`,
-                bottom: `${32 + (i % 2) * 6}%`,
+                left: `${10 + i * 4}%`,
+                bottom: `${25 + (i % 3) * 8}%`,
+                width: i % 2 === 0 ? '5px' : '4px',
+                height: i % 2 === 0 ? '5px' : '4px',
               }}
               animate={{
                 opacity: [0, 1, 0],
-                scale: [0, 1.2, 0],
+                scale: [0, 1.5, 0],
               }}
               transition={{
                 duration: 2.5,
                 repeat: Infinity,
-                delay: i * 0.5,
+                delay: i * 0.4,
               }}
             />
           ))}
