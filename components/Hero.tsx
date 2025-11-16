@@ -94,14 +94,14 @@ const Hero = () => {
             </path>
           </svg>
 
-          {/* Atlantis Ship - Majestic Colorful Ship on Right Side */}
+          {/* Atlantis Ship - Sharp Geometric Design with Vibrant Red & Blue */}
           <motion.div
             className="absolute"
-            style={{ right: '8%', bottom: '22%' }}
+            style={{ right: '15%', bottom: '18%' }}
             animate={{
-              y: [0, -35, 5, -30, 0],
-              x: [0, 12, -6, 18, 0],
-              rotate: [0, -5, 3, -4, 0]
+              y: [0, -40, 8, -35, 0],
+              x: [0, 15, -8, 20, 0],
+              rotate: [0, -6, 4, -5, 0]
             }}
             transition={{
               duration: 6,
@@ -109,38 +109,46 @@ const Hero = () => {
               ease: "easeInOut"
             }}
           >
-            <svg width="700" height="700" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <svg width="900" height="900" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="shipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#ec4899', stopOpacity: 1}} />
-                  <stop offset="25%" style={{stopColor: '#a78bfa', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#6366f1', stopOpacity: 1}} />
-                  <stop offset="75%" style={{stopColor: '#06b6d4', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#8b5cf6', stopOpacity: 1}} />
+                {/* Vibrant Red Gradient */}
+                <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#ef4444', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#dc2626', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#b91c1c', stopOpacity: 1}} />
                 </linearGradient>
-                <linearGradient id="sailGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 0.9}} />
-                  <stop offset="50%" style={{stopColor: '#f59e0b', stopOpacity: 0.95}} />
-                  <stop offset="100%" style={{stopColor: '#d97706', stopOpacity: 0.9}} />
+
+                {/* Vibrant Blue Gradient */}
+                <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#3b82f6', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#2563eb', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#1d4ed8', stopOpacity: 1}} />
                 </linearGradient>
-                <linearGradient id="sailGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 0.9}} />
-                  <stop offset="50%" style={{stopColor: '#0891b2', stopOpacity: 0.95}} />
-                  <stop offset="100%" style={{stopColor: '#0e7490', stopOpacity: 0.9}} />
+
+                {/* Cyan Gradient for accents */}
+                <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#06b6d4', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#0891b2', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#0e7490', stopOpacity: 1}} />
                 </linearGradient>
-                <linearGradient id="deckGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#d97706', stopOpacity: 1}} />
+
+                {/* Red to Blue Gradient for main hull */}
+                <linearGradient id="redBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor: '#dc2626', stopOpacity: 1}} />
+                  <stop offset="50%" style={{stopColor: '#8b5cf6', stopOpacity: 1}} />
+                  <stop offset="100%" style={{stopColor: '#2563eb', stopOpacity: 1}} />
                 </linearGradient>
-                <filter id="shipGlow">
-                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+
+                <filter id="superGlow">
+                  <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
                   <feMerge>
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
                   </feMerge>
                 </filter>
-                <filter id="strongGlow">
-                  <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+
+                <filter id="intensiveGlow">
+                  <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
                   <feMerge>
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
@@ -148,157 +156,191 @@ const Hero = () => {
                 </filter>
               </defs>
 
-              {/* Ship Hull - Larger and More Detailed */}
-              <path d="M 45 145 Q 35 115, 48 95 L 55 92 L 72 88 L 128 88 L 145 92 L 152 95 Q 165 115, 155 145 L 148 152 L 52 152 Z"
-                fill="url(#shipGradient)" stroke="#fff" strokeWidth="3" filter="url(#strongGlow)" opacity="1"/>
+              {/* Main Hull - Sharp Geometric Design */}
+              {/* Bottom hull - Red */}
+              <polygon points="50,160 60,155 80,150 160,150 180,155 190,160 185,175 55,175"
+                fill="url(#redGradient)" stroke="#ffffff" strokeWidth="4" filter="url(#superGlow)" opacity="1"/>
 
-              {/* Hull Details - Sharp Lines */}
-              <path d="M 55 92 L 58 140" stroke="#fbbf24" strokeWidth="2" opacity="0.8" filter="url(#shipGlow)"/>
-              <path d="M 145 92 L 142 140" stroke="#fbbf24" strokeWidth="2" opacity="0.8" filter="url(#shipGlow)"/>
-              <path d="M 70 90 Q 100 88, 130 90" stroke="#06b6d4" strokeWidth="2" opacity="0.9" fill="none" filter="url(#shipGlow)"/>
+              {/* Upper hull - Blue */}
+              <polygon points="60,155 70,130 80,120 90,115 150,115 160,120 170,130 180,155"
+                fill="url(#blueGradient)" stroke="#ffffff" strokeWidth="4" filter="url(#superGlow)" opacity="1"/>
 
-              {/* Deck */}
-              <ellipse cx="100" cy="95" rx="50" ry="8" fill="url(#deckGradient)" stroke="#fff" strokeWidth="1.5" opacity="0.9" filter="url(#shipGlow)"/>
+              {/* Center accent stripe - Red to Blue blend */}
+              <polygon points="80,150 85,135 155,135 160,150"
+                fill="url(#redBlueGradient)" stroke="#ffffff" strokeWidth="3" opacity="0.95" filter="url(#superGlow)"/>
 
-              {/* Main Mast - Thicker */}
-              <rect x="93" y="35" width="6" height="65" fill="#fff" filter="url(#strongGlow)" opacity="0.95"/>
-              <rect x="94" y="36" width="4" height="63" fill="url(#shipGradient)" opacity="0.8"/>
+              {/* Sharp White Lines - Geometric Details */}
+              <line x1="70" y1="130" x2="75" y2="165" stroke="#ffffff" strokeWidth="3" opacity="0.9" filter="url(#superGlow)"/>
+              <line x1="170" y1="130" x2="165" y2="165" stroke="#ffffff" strokeWidth="3" opacity="0.9" filter="url(#superGlow)"/>
+              <line x1="90" y1="115" x2="95" y2="155" stroke="#06b6d4" strokeWidth="2.5" opacity="1" filter="url(#superGlow)"/>
+              <line x1="150" y1="115" x2="145" y2="155" stroke="#06b6d4" strokeWidth="2.5" opacity="1" filter="url(#superGlow)"/>
 
-              {/* Front Mast */}
-              <rect x="68" y="50" width="5" height="50" fill="#fff" filter="url(#shipGlow)" opacity="0.9"/>
-              <rect x="69" y="51" width="3" height="48" fill="url(#sailGradient2)" opacity="0.7"/>
+              {/* Geometric Deck Platform */}
+              <polygon points="75,125 85,120 155,120 165,125 160,132 80,132"
+                fill="url(#cyanGradient)" stroke="#ffffff" strokeWidth="3" opacity="0.95" filter="url(#superGlow)"/>
 
-              {/* Rear Mast */}
-              <rect x="128" y="55" width="5" height="45" fill="#fff" filter="url(#shipGlow)" opacity="0.9"/>
-              <rect x="129" y="56" width="3" height="43" fill="url(#sailGradient1)" opacity="0.7"/>
+              {/* MASTS - Tall Sharp White Poles */}
+              {/* Main Center Mast - Tallest */}
+              <rect x="115" y="40" width="10" height="90" fill="#ffffff" filter="url(#intensiveGlow)" opacity="1"/>
+              <rect x="117" y="42" width="6" height="86" fill="url(#blueGradient)" opacity="0.9"/>
 
-              {/* Main Sail - Large and Colorful */}
-              <path d="M 96 40 Q 135 60, 140 90 L 96 85 Z" fill="url(#sailGradient1)" stroke="#fff" strokeWidth="2.5" opacity="0.85" filter="url(#shipGlow)">
-                <animate attributeName="d" dur="3.5s" repeatCount="indefinite"
-                  values="M 96 40 Q 135 60, 140 90 L 96 85 Z;
-                          M 96 40 Q 145 60, 150 90 L 96 85 Z;
-                          M 96 40 Q 135 60, 140 90 L 96 85 Z" />
-              </path>
+              {/* Front Mast - Left */}
+              <rect x="85" y="60" width="8" height="70" fill="#ffffff" filter="url(#superGlow)" opacity="1"/>
+              <rect x="87" y="62" width="4" height="66" fill="url(#redGradient)" opacity="0.9"/>
 
-              {/* Front Sail - Cyan */}
-              <path d="M 71 55 Q 45 70, 40 95 L 71 90 Z" fill="url(#sailGradient2)" stroke="#fff" strokeWidth="2.5" opacity="0.85" filter="url(#shipGlow)">
-                <animate attributeName="d" dur="3.5s" repeatCount="indefinite"
-                  values="M 71 55 Q 45 70, 40 95 L 71 90 Z;
-                          M 71 55 Q 35 70, 30 95 L 71 90 Z;
-                          M 71 55 Q 45 70, 40 95 L 71 90 Z" />
-              </path>
+              {/* Rear Mast - Right */}
+              <rect x="150" y="65" width="8" height="65" fill="#ffffff" filter="url(#superGlow)" opacity="1"/>
+              <rect x="152" y="67" width="4" height="61" fill="url(#blueGradient)" opacity="0.9"/>
 
-              {/* Rear Sail */}
-              <path d="M 131 60 Q 155 75, 160 95 L 131 90 Z" fill="url(#sailGradient1)" stroke="#fff" strokeWidth="2.5" opacity="0.85" filter="url(#shipGlow)">
-                <animate attributeName="d" dur="3.5s" repeatCount="indefinite"
-                  values="M 131 60 Q 155 75, 160 95 L 131 90 Z;
-                          M 131 60 Q 165 75, 170 95 L 131 90 Z;
-                          M 131 60 Q 155 75, 160 95 L 131 90 Z" />
-              </path>
+              {/* SAILS - Sharp Triangular Geometric Shapes */}
+              {/* Main Sail - Center - Large Blue Triangle */}
+              <polygon points="120,45 175,80 175,120 120,115"
+                fill="url(#blueGradient)" stroke="#ffffff" strokeWidth="4" opacity="0.95" filter="url(#superGlow)">
+                <animate attributeName="points" dur="3.5s" repeatCount="indefinite"
+                  values="120,45 175,80 175,120 120,115;
+                          120,45 185,80 185,120 120,115;
+                          120,45 175,80 175,120 120,115" />
+              </polygon>
 
-              {/* Ornamental Details */}
-              <circle cx="100" cy="105" r="5" fill="#fbbf24" stroke="#fff" strokeWidth="2" opacity="0.95" filter="url(#strongGlow)"/>
-              <path d="M 52 152 Q 100 158, 148 152" stroke="#fbbf24" strokeWidth="3" fill="none" opacity="0.85" filter="url(#shipGlow)"/>
+              {/* Front Sail - Left - Red Triangle */}
+              <polygon points="89,65 50,90 50,125 89,120"
+                fill="url(#redGradient)" stroke="#ffffff" strokeWidth="4" opacity="0.95" filter="url(#superGlow)">
+                <animate attributeName="points" dur="3.5s" repeatCount="indefinite"
+                  values="89,65 50,90 50,125 89,120;
+                          89,65 40,90 40,125 89,120;
+                          89,65 50,90 50,125 89,120" />
+              </polygon>
 
-              {/* Windows/Portholes */}
-              <circle cx="70" cy="110" r="3" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.9" filter="url(#shipGlow)"/>
-              <circle cx="85" cy="108" r="3" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.9" filter="url(#shipGlow)"/>
-              <circle cx="115" cy="108" r="3" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.9" filter="url(#shipGlow)"/>
-              <circle cx="130" cy="110" r="3" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.9" filter="url(#shipGlow)"/>
+              {/* Rear Sail - Right - Cyan Triangle */}
+              <polygon points="154,70 190,95 190,125 154,120"
+                fill="url(#cyanGradient)" stroke="#ffffff" strokeWidth="4" opacity="0.95" filter="url(#superGlow)">
+                <animate attributeName="points" dur="3.5s" repeatCount="indefinite"
+                  values="154,70 190,95 190,125 154,120;
+                          154,70 200,95 200,125 154,120;
+                          154,70 190,95 190,125 154,120" />
+              </polygon>
 
-              {/* Mystical Glow at Ship Base - Multi-colored */}
-              <ellipse cx="100" cy="152" rx="70" ry="15" fill="#ec4899" opacity="0.3" filter="url(#strongGlow)">
+              {/* Sharp Geometric Windows - Diamond Shapes */}
+              <polygon points="95,140 100,137 105,140 100,143" fill="#06b6d4" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)"/>
+              <polygon points="115,138 120,135 125,138 120,141" fill="#ef4444" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)"/>
+              <polygon points="135,138 140,135 145,138 140,141" fill="#06b6d4" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)"/>
+
+              {/* Bow Ornament - Sharp Star */}
+              <polygon points="120,128 125,135 120,142 115,135" fill="#ffffff" stroke="#06b6d4" strokeWidth="2" opacity="1" filter="url(#intensiveGlow)"/>
+              <circle cx="120" cy="135" r="3" fill="#ef4444" stroke="#ffffff" strokeWidth="1.5" opacity="1" filter="url(#superGlow)"/>
+
+              {/* Sharp Geometric Bottom Trim */}
+              <polygon points="55,175 60,170 180,170 185,175" fill="url(#redBlueGradient)" stroke="#ffffff" strokeWidth="3" opacity="0.9" filter="url(#superGlow)"/>
+
+              {/* Intense Multi-colored Glow Base - Red and Blue */}
+              <ellipse cx="120" cy="175" rx="90" ry="20" fill="#ef4444" opacity="0.4" filter="url(#intensiveGlow)">
                 <animate attributeName="opacity" dur="2s" repeatCount="indefinite"
-                  values="0.3;0.6;0.3" />
+                  values="0.4;0.7;0.4" />
                 <animate attributeName="rx" dur="2s" repeatCount="indefinite"
-                  values="70;85;70" />
+                  values="90;105;90" />
               </ellipse>
 
-              <ellipse cx="100" cy="152" rx="60" ry="12" fill="#06b6d4" opacity="0.5" filter="url(#strongGlow)">
+              <ellipse cx="120" cy="175" rx="75" ry="15" fill="#2563eb" opacity="0.6" filter="url(#intensiveGlow)">
                 <animate attributeName="opacity" dur="2.5s" repeatCount="indefinite"
-                  values="0.5;0.8;0.5" />
+                  values="0.6;0.9;0.6" />
                 <animate attributeName="rx" dur="2.5s" repeatCount="indefinite"
-                  values="60;75;60" />
+                  values="75;90;75" />
               </ellipse>
 
-              {/* Rainbow Aura Around Ship */}
-              <circle cx="100" cy="100" r="80" fill="none" stroke="url(#shipGradient)" strokeWidth="2" opacity="0.15" filter="url(#strongGlow)">
+              {/* Vibrant Aura - Pulsing Red & Blue Circle */}
+              <circle cx="120" cy="120" r="100" fill="none" stroke="#ef4444" strokeWidth="3" opacity="0.25" filter="url(#intensiveGlow)">
                 <animate attributeName="r" dur="3s" repeatCount="indefinite"
-                  values="80;90;80" />
+                  values="100;115;100" />
                 <animate attributeName="opacity" dur="3s" repeatCount="indefinite"
-                  values="0.15;0.25;0.15" />
+                  values="0.25;0.4;0.25" />
               </circle>
 
-              {/* Flags - Colorful */}
-              <rect x="95" y="32" width="2" height="10" fill="#fff" opacity="0.9"/>
-              <path d="M 97 32 L 115 37 L 97 42 Z" fill="#ec4899" stroke="#fff" strokeWidth="1" opacity="0.95" filter="url(#shipGlow)">
-                <animate attributeName="d" dur="1.8s" repeatCount="indefinite"
-                  values="M 97 32 L 115 37 L 97 42 Z;
-                          M 97 32 L 120 37 L 97 42 Z;
-                          M 97 32 L 115 37 L 97 42 Z" />
-              </path>
+              <circle cx="120" cy="120" r="95" fill="none" stroke="#3b82f6" strokeWidth="3" opacity="0.3" filter="url(#intensiveGlow)">
+                <animate attributeName="r" dur="3s" repeatCount="indefinite"
+                  values="95;110;95" />
+                <animate attributeName="opacity" dur="3s" repeatCount="indefinite"
+                  values="0.3;0.5;0.3" />
+              </circle>
 
-              <rect x="69" y="48" width="2" height="8" fill="#fff" opacity="0.9"/>
-              <path d="M 71 48 L 85 52 L 71 56 Z" fill="#fbbf24" stroke="#fff" strokeWidth="1" opacity="0.95" filter="url(#shipGlow)">
-                <animate attributeName="d" dur="1.8s" repeatCount="indefinite"
-                  values="M 71 48 L 85 52 L 71 56 Z;
-                          M 71 48 L 90 52 L 71 56 Z;
-                          M 71 48 L 85 52 L 71 56 Z" />
-              </path>
+              {/* Sharp Flags - Geometric Triangles */}
+              {/* Main Mast Flag - Red */}
+              <rect x="118" y="35" width="3" height="12" fill="#ffffff" opacity="1"/>
+              <polygon points="121,35 145,42 121,49" fill="#ef4444" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)">
+                <animate attributeName="points" dur="1.8s" repeatCount="indefinite"
+                  values="121,35 145,42 121,49;
+                          121,35 152,42 121,49;
+                          121,35 145,42 121,49" />
+              </polygon>
 
-              <rect x="130" y="53" width="2" height="8" fill="#fff" opacity="0.9"/>
-              <path d="M 132 53 L 146 57 L 132 61 Z" fill="#06b6d4" stroke="#fff" strokeWidth="1" opacity="0.95" filter="url(#shipGlow)">
-                <animate attributeName="d" dur="1.8s" repeatCount="indefinite"
-                  values="M 132 53 L 146 57 L 132 61 Z;
-                          M 132 53 L 151 57 L 132 61 Z;
-                          M 132 53 L 146 57 L 132 61 Z" />
-              </path>
+              {/* Front Mast Flag - Blue */}
+              <rect x="88" y="56" width="3" height="10" fill="#ffffff" opacity="1"/>
+              <polygon points="91,56 110,62 91,68" fill="#3b82f6" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)">
+                <animate attributeName="points" dur="1.8s" repeatCount="indefinite"
+                  values="91,56 110,62 91,68;
+                          91,56 117,62 91,68;
+                          91,56 110,62 91,68" />
+              </polygon>
+
+              {/* Rear Mast Flag - Cyan */}
+              <rect x="153" y="61" width="3" height="10" fill="#ffffff" opacity="1"/>
+              <polygon points="156,61 175,67 156,73" fill="#06b6d4" stroke="#ffffff" strokeWidth="2" opacity="1" filter="url(#superGlow)">
+                <animate attributeName="points" dur="1.8s" repeatCount="indefinite"
+                  values="156,61 175,67 156,73;
+                          156,61 182,67 156,73;
+                          156,61 175,67 156,73" />
+              </polygon>
+
+              {/* Additional Sharp Accent Lines for Pop */}
+              <line x1="60" y1="155" x2="180" y2="155" stroke="#ffffff" strokeWidth="2" opacity="0.7" strokeDasharray="5,3"/>
+              <line x1="80" y1="135" x2="160" y2="135" stroke="#06b6d4" strokeWidth="2" opacity="0.8" filter="url(#superGlow)"/>
             </svg>
           </motion.div>
 
-          {/* Storm Spray and Foam Effects */}
-          {[...Array(15)].map((_, i) => (
+          {/* Storm Spray and Foam Effects - Red & Blue Particles */}
+          {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute bg-white rounded-full"
+              className="absolute rounded-full"
               style={{
-                right: `${5 + i * 3}%`,
-                bottom: `${20 + (i % 5) * 7}%`,
-                width: i % 3 === 0 ? '6px' : '5px',
-                height: i % 3 === 0 ? '6px' : '5px',
+                right: `${12 + i * 2.5}%`,
+                bottom: `${18 + (i % 6) * 8}%`,
+                width: i % 3 === 0 ? '8px' : '6px',
+                height: i % 3 === 0 ? '8px' : '6px',
+                backgroundColor: i % 2 === 0 ? '#ef4444' : '#ffffff',
               }}
               animate={{
-                opacity: [0, 0.8, 0],
-                scale: [0, 1.8, 0],
-                y: [0, -30, -60],
+                opacity: [0, 0.9, 0],
+                scale: [0, 2, 0],
+                y: [0, -40, -80],
               }}
               transition={{
                 duration: 2 + (i % 3),
                 repeat: Infinity,
-                delay: i * 0.3,
+                delay: i * 0.25,
               }}
             />
           ))}
 
-          {/* Mystical Blue Sparkles Around Ship */}
-          {[...Array(10)].map((_, i) => (
+          {/* Mystical Blue & Cyan Sparkles Around Ship */}
+          {[...Array(15)].map((_, i) => (
             <motion.div
               key={`sparkle-${i}`}
-              className="absolute bg-cyan-300 rounded-full"
+              className="absolute rounded-full"
               style={{
-                right: `${6 + i * 2.5}%`,
-                bottom: `${25 + (i % 3) * 8}%`,
-                width: i % 2 === 0 ? '5px' : '4px',
-                height: i % 2 === 0 ? '5px' : '4px',
+                right: `${13 + i * 2}%`,
+                bottom: `${20 + (i % 4) * 9}%`,
+                width: i % 2 === 0 ? '6px' : '5px',
+                height: i % 2 === 0 ? '6px' : '5px',
+                backgroundColor: i % 3 === 0 ? '#3b82f6' : '#06b6d4',
               }}
               animate={{
                 opacity: [0, 1, 0],
-                scale: [0, 1.5, 0],
+                scale: [0, 1.8, 0],
               }}
               transition={{
                 duration: 2.5,
                 repeat: Infinity,
-                delay: i * 0.4,
+                delay: i * 0.35,
               }}
             />
           ))}
