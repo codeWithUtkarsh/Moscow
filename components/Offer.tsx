@@ -8,12 +8,12 @@ import { Check, Gift, Clock } from 'lucide-react';
 const Offer = () => {
   return (
     <section id="offer" className="relative py-32 overflow-hidden">
-      {/* Gaia-inspired Dramatic Background */}
+      {/* Light Earth Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1e0a2e] via-[#0a1f1a] to-[#1e1b4b]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f5f3ef] via-[#e8e4db] to-[#d4cfc4]"></div>
 
         {/* Animated Background Image */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <Image
             src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80"
             alt="Background"
@@ -22,12 +22,12 @@ const Offer = () => {
           />
         </div>
 
-        {/* Gaia Gradient Overlays */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-700/30 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-teal-600/30 via-transparent to-transparent"></div>
+        {/* Earth Gradient Overlays */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-emerald-100/30 via-transparent to-transparent"></div>
 
-        {/* Glowing Vector Shapes - Gaia Pink/Teal Effect */}
-        <svg className="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
+        {/* Flowing Vector Shapes - Earth Tones */}
+        <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="glow-offer">
               <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
@@ -37,9 +37,9 @@ const Offer = () => {
               </feMerge>
             </filter>
             <linearGradient id="silverGradient-offer" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{stopColor: '#f0abfc', stopOpacity: 0.8}} />
-              <stop offset="50%" style={{stopColor: '#14b8a6', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#22d3ee', stopOpacity: 0.8}} />
+              <stop offset="0%" style={{stopColor: '#7c9885', stopOpacity: 0.6}} />
+              <stop offset="50%" style={{stopColor: '#a88860', stopOpacity: 0.8}} />
+              <stop offset="100%" style={{stopColor: '#8b6f47', stopOpacity: 0.6}} />
             </linearGradient>
           </defs>
 
@@ -87,9 +87,9 @@ const Offer = () => {
           />
         </svg>
 
-        {/* Glowing Orbs */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        {/* Soft Glowing Orbs */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,10 +101,10 @@ const Offer = () => {
           className="relative"
         >
           {/* Main Card */}
-          <div className="relative glass-effect rounded-3xl overflow-hidden">
-            {/* Glow Effect */}
+          <div className="relative bg-white/70 backdrop-blur-sm border-2 border-stone-200 rounded-3xl overflow-hidden shadow-2xl">
+            {/* Subtle Glow Effect */}
             <div className="absolute inset-0 bg-gradient-accent opacity-5 blur-2xl"></div>
-            <div className="absolute -inset-1 bg-gradient-accent opacity-20 blur-xl"></div>
+            <div className="absolute -inset-1 bg-gradient-accent opacity-10 blur-xl"></div>
 
             <div className="relative p-12 md:p-16">
               {/* Badge */}
@@ -113,7 +113,7 @@ const Offer = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-accent rounded-full mb-8"
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-accent rounded-full mb-8 shadow-lg"
               >
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -130,10 +130,10 @@ const Offer = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-4xl md:text-6xl font-bold font-display mb-8 leading-tight"
+                className="text-4xl md:text-6xl font-bold font-display mb-8 leading-tight text-stone-800"
               >
                 First 5 People Get{' '}
-                <span className="bg-gradient-accent bg-clip-text text-transparent text-glow">
+                <span className="bg-gradient-accent bg-clip-text text-transparent">
                   100% FREE APP
                 </span>
               </motion.h2>
@@ -144,7 +144,7 @@ const Offer = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-2xl font-bold text-white mb-12 max-w-3xl leading-relaxed"
+                className="text-2xl font-bold text-stone-700 mb-12 max-w-3xl leading-relaxed"
               >
                 Worth $25,000. Completely FREE. No tricks. No hidden fees.
               </motion.p>
@@ -153,7 +153,7 @@ const Offer = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.45 }}
-                className="text-lg text-gray-300 mb-12 max-w-3xl"
+                className="text-lg text-stone-600 mb-12 max-w-3xl"
               >
                 Sign up now before all 5 spots are gone!
               </motion.p>
@@ -178,17 +178,17 @@ const Offer = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.6 + index * 0.1 }}
-                    className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group"
+                    className="bg-white/60 backdrop-blur-sm border border-stone-200 rounded-xl p-6 hover:bg-white/80 hover:shadow-lg transition-all duration-300 group"
                   >
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-md">
                         <Check className="w-5 h-5 text-white" strokeWidth={3} />
                       </div>
                       <div className="flex-1">
-                        <div className="text-white font-semibold mb-1">
+                        <div className="text-stone-800 font-semibold mb-1">
                           {feature.text}
                         </div>
-                        <div className="text-gray-400 text-sm line-through">
+                        <div className="text-stone-500 text-sm line-through">
                           {feature.value}
                         </div>
                       </div>
@@ -203,16 +203,16 @@ const Offer = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.9 }}
-                className="text-center mb-12 p-8 glass-effect rounded-2xl"
+                className="text-center mb-12 p-8 bg-white/60 backdrop-blur-sm border border-stone-200 rounded-2xl shadow-lg"
               >
-                <div className="text-gray-400 text-lg mb-2">Total Value</div>
+                <div className="text-stone-600 text-lg mb-2 font-semibold">Total Value</div>
                 <div className="text-5xl font-bold mb-2">
-                  <span className="line-through text-gray-600">$25,000</span>
+                  <span className="line-through text-stone-400">$25,000</span>
                   <span className="ml-4 bg-gradient-accent bg-clip-text text-transparent">
                     $0
                   </span>
                 </div>
-                <div className="text-gray-400">For the first 5 founders only</div>
+                <div className="text-stone-600 font-medium">For the first 5 founders only</div>
               </motion.div>
 
               {/* CTA */}
@@ -225,13 +225,13 @@ const Offer = () => {
               >
                 <Link
                   href="#signup"
-                  className="inline-flex items-center space-x-3 px-12 py-6 bg-gradient-accent text-white rounded-full font-bold text-xl hover:glow-effect transition-all duration-300 hover:scale-105 group"
+                  className="inline-flex items-center space-x-3 px-12 py-6 bg-gradient-accent text-white rounded-full font-bold text-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
                 >
                   <span>Claim Your Free Spot</span>
                   <Gift className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
 
-                <div className="flex items-center justify-center space-x-2 text-pink-400 font-semibold">
+                <div className="flex items-center justify-center space-x-2 text-emerald-700 font-semibold">
                   <Clock className="w-6 h-6" />
                   <span>Hurry! Only 5 spots available</span>
                 </div>
@@ -252,7 +252,7 @@ const Offer = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1.1 + index * 0.1 }}
-                className="glass-effect rounded-xl p-6 text-center hover:bg-white/10 transition-all duration-300 group"
+                className="bg-white/60 backdrop-blur-sm border border-stone-200 rounded-xl p-6 text-center hover:bg-white/80 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">
                   {stat.icon}
@@ -260,7 +260,7 @@ const Offer = () => {
                 <div className="text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-1">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
+                <div className="text-stone-600 text-sm font-semibold">{stat.label}</div>
               </motion.div>
             ))}
           </div>

@@ -89,12 +89,16 @@ const Signup = () => {
 
   return (
     <section id="signup" className="relative py-32 overflow-hidden">
-      {/* Gaia Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f1a] via-[#1e1b4b] to-[#0a1f1a]">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#14b8a633_1px,transparent_1px),linear-gradient(to_bottom,#14b8a633_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+      {/* Light Earth Background */}
+      <div className="absolute inset-0 bg-gradient-dark">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#a8886015_1px,transparent_1px),linear-gradient(to_bottom,#a8886015_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30"></div>
 
-        {/* Glowing Vector Shapes - Silver Lining Effect */}
-        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
+        {/* Soft Glowing Orbs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+
+        {/* Flowing Vector Shapes - Natural Earth Tones */}
+        <svg className="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="glow-signup">
               <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
@@ -104,9 +108,9 @@ const Signup = () => {
               </feMerge>
             </filter>
             <linearGradient id="silverGradient-signup" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style={{stopColor: '#c084fc', stopOpacity: 0.7}} />
-              <stop offset="50%" style={{stopColor: '#22d3ee', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#14b8a6', stopOpacity: 0.7}} />
+              <stop offset="0%" style={{stopColor: '#a88860', stopOpacity: 0.7}} />
+              <stop offset="50%" style={{stopColor: '#7c9885', stopOpacity: 0.9}} />
+              <stop offset="100%" style={{stopColor: '#5a8f7b', stopOpacity: 0.7}} />
             </linearGradient>
           </defs>
 
@@ -176,13 +180,16 @@ const Signup = () => {
             className="space-y-12"
           >
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
-                Ready to Get Your App?
+              <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 text-stone-800">
+                Ready to Get Your{' '}
+                <span className="bg-gradient-accent bg-clip-text text-transparent">
+                  App?
+                </span>
               </h2>
-              <p className="text-2xl font-bold text-white leading-relaxed mb-4">
+              <p className="text-2xl font-bold text-stone-700 leading-relaxed mb-4">
                 Sign up now. Get your app in 7 days.
               </p>
-              <p className="text-lg text-gray-400 leading-relaxed">
+              <p className="text-lg text-stone-600 leading-relaxed">
                 Join people who got their ideas built fast with Atlantis.AI.
               </p>
             </div>
@@ -218,24 +225,24 @@ const Signup = () => {
                   className="flex items-start space-x-4 group"
                 >
                   <div className="relative flex-shrink-0">
-                    <div className="w-16 h-16 rounded-xl overflow-hidden glass-effect">
+                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-white/60 backdrop-blur-sm border border-stone-200">
                       <Image
                         src={benefit.image}
                         alt={benefit.title}
                         width={64}
                         height={64}
-                        className="object-cover opacity-50 group-hover:opacity-100 transition-opacity"
+                        className="object-cover opacity-30 group-hover:opacity-50 transition-opacity"
                       />
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <benefit.icon className="w-8 h-8 text-white" strokeWidth={2} />
+                      <benefit.icon className="w-8 h-8 text-emerald-600" strokeWidth={2} />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-bold mb-1 font-display">
+                    <h4 className="text-xl font-bold mb-1 font-display text-stone-800">
                       {benefit.title}
                     </h4>
-                    <p className="text-gray-400">{benefit.description}</p>
+                    <p className="text-stone-600">{benefit.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -243,17 +250,17 @@ const Signup = () => {
 
             {/* Trust Indicators */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="glass-effect rounded-xl p-6 text-center">
+              <div className="bg-white/60 backdrop-blur-sm border border-stone-200 rounded-xl p-6 text-center hover:bg-white/80 hover:shadow-lg transition-all duration-300">
                 <div className="text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-2">
                   50+
                 </div>
-                <div className="text-gray-400 text-sm">MVPs Delivered</div>
+                <div className="text-stone-600 text-sm font-semibold">MVPs Delivered</div>
               </div>
-              <div className="glass-effect rounded-xl p-6 text-center">
+              <div className="bg-white/60 backdrop-blur-sm border border-stone-200 rounded-xl p-6 text-center hover:bg-white/80 hover:shadow-lg transition-all duration-300">
                 <div className="text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-2">
                   4.9/5
                 </div>
-                <div className="text-gray-400 text-sm">Client Rating</div>
+                <div className="text-stone-600 text-sm font-semibold">Client Rating</div>
               </div>
             </div>
           </motion.div>
@@ -265,21 +272,24 @@ const Signup = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="glass-effect rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div className="bg-white/70 backdrop-blur-sm border-2 border-stone-200 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-xl">
               {/* Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-accent opacity-10 blur-xl"></div>
+              <div className="absolute -inset-1 bg-gradient-accent opacity-5 blur-xl"></div>
 
               <div className="relative">
                 {!isSubmitted ? (
                   <>
-                    <h3 className="text-3xl font-bold font-display mb-8 text-center">
-                      Sign Up for FREE MVP
+                    <h3 className="text-3xl font-bold font-display mb-8 text-center text-stone-800">
+                      Sign Up for{' '}
+                      <span className="bg-gradient-accent bg-clip-text text-transparent">
+                        FREE MVP
+                      </span>
                     </h3>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                       {/* Name */}
                       <div>
-                        <label htmlFor="name" className="block text-sm font-semibold mb-2">
+                        <label htmlFor="name" className="block text-sm font-semibold mb-2 text-stone-700">
                           Full Name *
                         </label>
                         <input
@@ -288,19 +298,19 @@ const Signup = () => {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className={`w-full px-4 py-3 bg-white/5 border ${
-                            errors.name ? 'border-red-500' : 'border-gray-700'
-                          } rounded-xl focus:outline-none focus:border-indigo-500 transition-colors`}
+                          className={`w-full px-4 py-3 bg-white/80 border ${
+                            errors.name ? 'border-red-500' : 'border-stone-200'
+                          } rounded-xl focus:outline-none focus:border-emerald-500 transition-colors text-stone-800 placeholder:text-stone-400`}
                           placeholder="John Doe"
                         />
                         {errors.name && (
-                          <p className="text-red-400 text-sm mt-1">{errors.name}</p>
+                          <p className="text-red-500 text-sm mt-1">{errors.name}</p>
                         )}
                       </div>
 
                       {/* Email */}
                       <div>
-                        <label htmlFor="email" className="block text-sm font-semibold mb-2">
+                        <label htmlFor="email" className="block text-sm font-semibold mb-2 text-stone-700">
                           Email Address *
                         </label>
                         <input
@@ -309,19 +319,19 @@ const Signup = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className={`w-full px-4 py-3 bg-white/5 border ${
-                            errors.email ? 'border-red-500' : 'border-gray-700'
-                          } rounded-xl focus:outline-none focus:border-indigo-500 transition-colors`}
+                          className={`w-full px-4 py-3 bg-white/80 border ${
+                            errors.email ? 'border-red-500' : 'border-stone-200'
+                          } rounded-xl focus:outline-none focus:border-emerald-500 transition-colors text-stone-800 placeholder:text-stone-400`}
                           placeholder="john@example.com"
                         />
                         {errors.email && (
-                          <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+                          <p className="text-red-500 text-sm mt-1">{errors.email}</p>
                         )}
                       </div>
 
                       {/* Company */}
                       <div>
-                        <label htmlFor="company" className="block text-sm font-semibold mb-2">
+                        <label htmlFor="company" className="block text-sm font-semibold mb-2 text-stone-700">
                           Company/Startup Name
                         </label>
                         <input
@@ -330,14 +340,14 @@ const Signup = () => {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-white/5 border border-gray-700 rounded-xl focus:outline-none focus:border-indigo-500 transition-colors"
+                          className="w-full px-4 py-3 bg-white/80 border border-stone-200 rounded-xl focus:outline-none focus:border-emerald-500 transition-colors text-stone-800 placeholder:text-stone-400"
                           placeholder="Your Startup"
                         />
                       </div>
 
                       {/* Industry */}
                       <div>
-                        <label htmlFor="industry" className="block text-sm font-semibold mb-2">
+                        <label htmlFor="industry" className="block text-sm font-semibold mb-2 text-stone-700">
                           Industry *
                         </label>
                         <select
@@ -345,9 +355,9 @@ const Signup = () => {
                           name="industry"
                           value={formData.industry}
                           onChange={handleChange}
-                          className={`w-full px-4 py-3 bg-white/5 border ${
-                            errors.industry ? 'border-red-500' : 'border-gray-700'
-                          } rounded-xl focus:outline-none focus:border-indigo-500 transition-colors`}
+                          className={`w-full px-4 py-3 bg-white/80 border ${
+                            errors.industry ? 'border-red-500' : 'border-stone-200'
+                          } rounded-xl focus:outline-none focus:border-emerald-500 transition-colors text-stone-800`}
                         >
                           <option value="">Select your industry</option>
                           <option value="saas">SaaS</option>
@@ -359,13 +369,13 @@ const Signup = () => {
                           <option value="other">Other</option>
                         </select>
                         {errors.industry && (
-                          <p className="text-red-400 text-sm mt-1">{errors.industry}</p>
+                          <p className="text-red-500 text-sm mt-1">{errors.industry}</p>
                         )}
                       </div>
 
                       {/* Idea */}
                       <div>
-                        <label htmlFor="idea" className="block text-sm font-semibold mb-2">
+                        <label htmlFor="idea" className="block text-sm font-semibold mb-2 text-stone-700">
                           Tell us about your idea *
                         </label>
                         <textarea
@@ -374,13 +384,13 @@ const Signup = () => {
                           value={formData.idea}
                           onChange={handleChange}
                           rows={4}
-                          className={`w-full px-4 py-3 bg-white/5 border ${
-                            errors.idea ? 'border-red-500' : 'border-gray-700'
-                          } rounded-xl focus:outline-none focus:border-indigo-500 transition-colors resize-none`}
+                          className={`w-full px-4 py-3 bg-white/80 border ${
+                            errors.idea ? 'border-red-500' : 'border-stone-200'
+                          } rounded-xl focus:outline-none focus:border-emerald-500 transition-colors resize-none text-stone-800 placeholder:text-stone-400`}
                           placeholder="Describe your MVP idea in a few sentences..."
                         />
                         {errors.idea && (
-                          <p className="text-red-400 text-sm mt-1">{errors.idea}</p>
+                          <p className="text-red-500 text-sm mt-1">{errors.idea}</p>
                         )}
                       </div>
 
@@ -388,7 +398,7 @@ const Signup = () => {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full px-8 py-4 bg-gradient-accent text-white rounded-full font-bold text-lg hover:glow-effect transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center space-x-2"
+                        className="w-full px-8 py-4 bg-gradient-accent text-white rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center space-x-2"
                       >
                         {isSubmitting ? (
                           <>
@@ -418,7 +428,7 @@ const Signup = () => {
                         )}
                       </button>
 
-                      <p className="text-center text-sm text-gray-500">
+                      <p className="text-center text-sm text-stone-500 font-medium">
                         * Required fields
                       </p>
                     </form>
@@ -430,18 +440,21 @@ const Signup = () => {
                     className="text-center py-12"
                   >
                     <div className="mb-6 flex justify-center">
-                      <Sparkles className="w-16 h-16 text-yellow-400" strokeWidth={2} />
+                      <Sparkles className="w-16 h-16 text-amber-500" strokeWidth={2} />
                     </div>
-                    <h3 className="text-3xl font-bold font-display mb-4">
-                      Application Submitted!
+                    <h3 className="text-3xl font-bold font-display mb-4 text-stone-800">
+                      Application{' '}
+                      <span className="bg-gradient-accent bg-clip-text text-transparent">
+                        Submitted!
+                      </span>
                     </h3>
-                    <p className="text-xl text-gray-400 mb-8">
+                    <p className="text-xl text-stone-600 mb-8">
                       We'll review your submission and get back to you within 24 hours.
                       Check your inbox!
                     </p>
-                    <div className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-accent/20 rounded-full">
-                      <Mail className="w-5 h-5 text-cyan-400" />
-                      <span className="text-sm">{formData.email}</span>
+                    <div className="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-100/60 border border-emerald-200 rounded-full">
+                      <Mail className="w-5 h-5 text-emerald-600" />
+                      <span className="text-sm font-semibold text-stone-700">{formData.email}</span>
                     </div>
                   </motion.div>
                 )}
