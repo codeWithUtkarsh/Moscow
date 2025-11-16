@@ -1,0 +1,30 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Atlantis.AI - Transform Your Dream Into Reality",
+  description: "Transform your groundbreaking idea into a working MVP at lightning speed. First 5 founders get their MVP built FREE!",
+  keywords: ["MVP development", "startup", "AI", "product development", "founders"],
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="dark">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased">
+        {children}
+      </body>
+    </html>
+  );
+}
