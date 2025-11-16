@@ -45,7 +45,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
             How It{' '}
             <span className="bg-gradient-accent bg-clip-text text-transparent">
               Works
@@ -73,12 +73,12 @@ const HowItWorks = () => {
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                 <div className="space-y-6">
                   <div className="inline-flex items-center space-x-4">
-                    <div className="text-7xl font-bold bg-gradient-accent bg-clip-text text-transparent font-[family-name:var(--font-space-grotesk)]">
+                    <div className="text-7xl font-bold bg-gradient-accent bg-clip-text text-transparent font-display">
                       {step.number}
                     </div>
                     <div className="text-6xl">{step.icon}</div>
                   </div>
-                  <h3 className="text-4xl font-bold font-[family-name:var(--font-space-grotesk)]">
+                  <h3 className="text-4xl font-bold font-display">
                     {step.title}
                   </h3>
                   <p className="text-xl text-gray-400 leading-relaxed">

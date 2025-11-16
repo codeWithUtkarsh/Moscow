@@ -59,7 +59,7 @@ const Features = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
             Why{' '}
             <span className="bg-gradient-accent bg-clip-text text-transparent">
               Atlantis.AI
@@ -98,7 +98,7 @@ const Features = () => {
                   <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)] group-hover:text-transparent group-hover:bg-gradient-accent group-hover:bg-clip-text transition-all duration-300">
+                  <h3 className="text-2xl font-bold mb-4 font-display group-hover:text-transparent group-hover:bg-gradient-accent group-hover:bg-clip-text transition-all duration-300">
                     {feature.title}
                   </h3>
                   <p className="text-gray-400 leading-relaxed">

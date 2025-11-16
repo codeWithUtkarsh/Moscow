@@ -68,7 +68,7 @@ const Offer = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-4xl md:text-6xl font-bold font-[family-name:var(--font-space-grotesk)] mb-8 leading-tight"
+                className="text-4xl md:text-6xl font-bold font-display mb-8 leading-tight"
               >
                 First 5 Founders Get Their MVP{' '}
                 <span className="bg-gradient-accent bg-clip-text text-transparent text-glow">

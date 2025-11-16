@@ -35,7 +35,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="#home" className="flex items-center space-x-3 group">
             <div className="text-4xl animate-float">🌊</div>
-            <span className="text-2xl font-bold bg-gradient-accent bg-clip-text text-transparent font-[family-name:var(--font-space-grotesk)]">
+            <span className="text-2xl font-bold bg-gradient-accent bg-clip-text text-transparent font-display">
               Atlantis.AI
             </span>
           </Link>

@@ -55,7 +55,7 @@ const Footer = () => {
             >
               <Link href="#home" className="flex items-center space-x-3 group">
                 <div className="text-4xl">🌊</div>
-                <span className="text-2xl font-bold bg-gradient-accent bg-clip-text text-transparent font-[family-name:var(--font-space-grotesk)]">
+                <span className="text-2xl font-bold bg-gradient-accent bg-clip-text text-transparent font-display">
                   Atlantis.AI
                 </span>
               </Link>
@@ -90,7 +90,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h4 className="text-white font-bold mb-6 font-[family-name:var(--font-space-grotesk)]">
+            <h4 className="text-white font-bold mb-6 font-display">
               Product
             </h4>
             <ul className="space-y-3">
@@ -114,7 +114,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h4 className="text-white font-bold mb-6 font-[family-name:var(--font-space-grotesk)]">
+            <h4 className="text-white font-bold mb-6 font-display">
               Company
             </h4>
             <ul className="space-y-3">
@@ -138,7 +138,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <h4 className="text-white font-bold mb-6 font-[family-name:var(--font-space-grotesk)]">
+            <h4 className="text-white font-bold mb-6 font-display">
               Legal
             </h4>
             <ul className="space-y-3">

@@ -104,7 +104,7 @@ const Signup = () => {
             className="space-y-12"
           >
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-space-grotesk)] mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
                 Ready to Transform Your Idea?
               </h2>
               <p className="text-xl text-gray-400 leading-relaxed">
@@ -157,7 +157,7 @@ const Signup = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-bold mb-1 font-[family-name:var(--font-space-grotesk)]">
+                    <h4 className="text-xl font-bold mb-1 font-display">
                       {benefit.title}
                     </h4>
                     <p className="text-gray-400">{benefit.description}</p>
@@ -197,7 +197,7 @@ const Signup = () => {
               <div className="relative">
                 {!isSubmitted ? (
                   <>
-                    <h3 className="text-3xl font-bold font-[family-name:var(--font-space-grotesk)] mb-8 text-center">
+                    <h3 className="text-3xl font-bold font-display mb-8 text-center">
                       Sign Up for FREE MVP
                     </h3>
 
@@ -355,7 +355,7 @@ const Signup = () => {
                     className="text-center py-12"
                   >
                     <div className="text-7xl mb-6">🎉</div>
-                    <h3 className="text-3xl font-bold font-[family-name:var(--font-space-grotesk)] mb-4">
+                    <h3 className="text-3xl font-bold font-display mb-4">
                       Application Submitted!
                     </h3>
                     <p className="text-xl text-gray-400 mb-8">

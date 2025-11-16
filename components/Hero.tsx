@@ -46,7 +46,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl font-bold font-[family-name:var(--font-space-grotesk)] leading-tight"
+              className="text-5xl md:text-7xl font-bold font-display leading-tight"
             >
               Turn Your{' '}
               <span className="bg-gradient-accent bg-clip-text text-transparent text-glow">
