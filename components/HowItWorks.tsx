@@ -37,14 +37,14 @@ const steps: Array<{
 const HowItWorks = () => {
   return (
     <section id="how-it-works" className="relative py-32 overflow-hidden">
-      {/* Gaia Background */}
+      {/* Light Earth Background */}
       <div className="absolute inset-0 bg-gradient-dark">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-600/15 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-pink-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-stone-200/15 rounded-full blur-3xl"></div>
 
-        {/* Glowing Vector Shapes - Gaia Cosmic Effect */}
-        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
+        {/* Flowing Vector Shapes - Natural Earth Effect */}
+        <svg className="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="glow-howitworks">
               <feGaussianBlur stdDeviation="7" result="coloredBlur"/>
@@ -54,9 +54,9 @@ const HowItWorks = () => {
               </feMerge>
             </filter>
             <linearGradient id="silverGradient-howitworks" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style={{stopColor: '#c084fc', stopOpacity: 0.7}} />
-              <stop offset="50%" style={{stopColor: '#14b8a6', stopOpacity: 1}} />
-              <stop offset="100%" style={{stopColor: '#f0abfc', stopOpacity: 0.7}} />
+              <stop offset="0%" style={{stopColor: '#a88860', stopOpacity: 0.6}} />
+              <stop offset="50%" style={{stopColor: '#7c9885', stopOpacity: 0.8}} />
+              <stop offset="100%" style={{stopColor: '#8b6f47', stopOpacity: 0.6}} />
             </linearGradient>
           </defs>
 
@@ -111,13 +111,13 @@ const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 text-stone-800">
             How It{' '}
             <span className="bg-gradient-accent bg-clip-text text-transparent">
               Works
             </span>
           </h2>
-          <p className="text-2xl font-bold text-white max-w-2xl mx-auto">
+          <p className="text-2xl font-bold text-stone-700 max-w-2xl mx-auto">
             3 easy steps. No confusion. No hassle.
           </p>
         </motion.div>
@@ -143,21 +143,21 @@ const HowItWorks = () => {
                       {step.number}
                     </div>
                     <div className="relative">
-                      <step.icon className="w-16 h-16 text-cyan-400" strokeWidth={2} />
-                      <div className="absolute inset-0 bg-cyan-400/20 blur-2xl"></div>
+                      <step.icon className="w-16 h-16 text-emerald-600" strokeWidth={2} />
+                      <div className="absolute inset-0 bg-emerald-400/20 blur-2xl"></div>
                     </div>
                   </div>
-                  <h3 className="text-4xl font-bold font-display">
+                  <h3 className="text-4xl font-bold font-display text-stone-800">
                     {step.title}
                   </h3>
-                  <p className="text-xl text-gray-400 leading-relaxed">
+                  <p className="text-xl text-stone-600 leading-relaxed">
                     {step.description}
                   </p>
 
                   {/* Progress Bar */}
                   <div className="pt-4">
                     <div className="flex items-center space-x-4">
-                      <div className="flex-1 h-2 bg-gray-800 rounded-full overflow-hidden">
+                      <div className="flex-1 h-2 bg-stone-200 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: '100%' }}
@@ -166,7 +166,7 @@ const HowItWorks = () => {
                           className="h-full bg-gradient-accent"
                         ></motion.div>
                       </div>
-                      <span className="text-sm text-gray-500 font-mono">
+                      <span className="text-sm text-stone-600 font-mono font-semibold">
                         Step {index + 1}/3
                       </span>
                     </div>
@@ -179,7 +179,7 @@ const HowItWorks = () => {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
-                  className="relative h-[400px] rounded-3xl overflow-hidden glass-effect group"
+                  className="relative h-[400px] rounded-3xl overflow-hidden border-2 border-stone-200 group shadow-lg"
                 >
                   <Image
                     src={step.image}
@@ -187,26 +187,26 @@ const HowItWorks = () => {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/75 via-stone-900/20 to-transparent"></div>
 
                   {/* Overlay Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center shadow-lg">
                         <step.icon className="w-8 h-8 text-white" strokeWidth={2.5} />
                       </div>
                       <div>
                         <div className="text-2xl font-bold text-white">
                           {step.title}
                         </div>
-                        <div className="text-gray-300">
+                        <div className="text-stone-100">
                           Step {step.number}
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Glow Effect on Hover */}
+                  {/* Subtle Glow Effect on Hover */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute inset-0 bg-gradient-accent opacity-10"></div>
                   </div>
@@ -216,7 +216,7 @@ const HowItWorks = () => {
               {/* Connector Line (except for last item) */}
               {index < steps.length - 1 && (
                 <div className="hidden lg:block lg:col-span-2 h-32 relative">
-                  <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 opacity-30 -translate-x-1/2"></div>
+                  <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-stone-200 -translate-x-1/2"></div>
                   <motion.div
                     initial={{ height: 0 }}
                     whileInView={{ height: '100%' }}
@@ -238,11 +238,11 @@ const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="mt-32 text-center"
         >
-          <div className="glass-effect rounded-2xl p-8 inline-block">
+          <div className="bg-white/70 backdrop-blur-sm border-2 border-stone-200 rounded-2xl p-8 inline-block shadow-lg">
             <div className="text-5xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-4">
               7-14 Days
             </div>
-            <div className="text-xl text-gray-400">
+            <div className="text-xl text-stone-700 font-semibold">
               Average time from idea to working MVP
             </div>
           </div>

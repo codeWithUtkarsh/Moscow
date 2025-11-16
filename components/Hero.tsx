@@ -212,13 +212,13 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center space-x-2 px-4 py-2 glass-effect rounded-full"
+              className="inline-flex items-center space-x-2 px-4 py-2 bg-white/70 backdrop-blur-sm border border-emerald-200 rounded-full"
             >
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-600"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-600"></span>
               </span>
-              <span className="text-sm font-medium text-stone-700">Only 5 FREE spots remaining!</span>
+              <span className="text-sm font-semibold text-stone-800">Only 5 FREE spots remaining!</span>
             </motion.div>
 
             <motion.h1
@@ -315,10 +315,10 @@ const Hero = () => {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/70 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="text-white font-bold text-xl">Fast & Professional</div>
-                  <div className="text-gray-300 text-sm">Ready in 7 days</div>
+                  <div className="text-stone-100 text-sm">Ready in 7 days</div>
                 </div>
               </motion.div>
 
@@ -334,10 +334,10 @@ const Hero = () => {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/75 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="text-white font-bold">Your Vision</div>
-                  <div className="text-gray-300 text-sm">Our expertise</div>
+                  <div className="text-stone-100 text-sm">Our expertise</div>
                 </div>
               </motion.div>
 
@@ -353,10 +353,10 @@ const Hero = () => {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-amber-900/75 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="text-white font-bold">Launch Ready</div>
-                  <div className="text-gray-300 text-sm">Start making money</div>
+                  <div className="text-stone-100 text-sm">Start making money</div>
                 </div>
               </motion.div>
 
